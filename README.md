@@ -1,227 +1,182 @@
-<svg width="100%" viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg" role="img">
-  <title>DevOps / SRE GitHub Profile Header</title>
-  <desc>Animated terminal-style profile banner with dark background, green scan line, and SLO dashboard</desc>
+<div align="center">
 
-  <defs>
-    <style>
-      .scan { animation: scandown 4s linear infinite; }
-      @keyframes scandown {
-        0%   { transform: translateY(0);    opacity: 1; }
-        88%  { opacity: 1; }
-        100% { transform: translateY(500px); opacity: 0; }
-      }
-      .blink { animation: blink 1.2s ease-in-out infinite; }
-      @keyframes blink {
-        0%,100% { opacity: 1; }
-        50%      { opacity: 0.15; }
-      }
-      .pulsering { animation: pr 2.5s ease-in-out infinite; }
-      @keyframes pr {
-        0%,100% { opacity: 0.25; r: 40; }
-        50%      { opacity: 0.75; r: 46; }
-      }
-      .statusdot { animation: sd 1.5s ease-in-out infinite; }
-      @keyframes sd {
-        0%,100% { opacity: 1; }
-        50%      { opacity: 0.2; }
-      }
-      .fi1 { animation: fi .6s ease-out .1s both; }
-      .fi2 { animation: fi .6s ease-out .3s both; }
-      .fi3 { animation: fi .6s ease-out .5s both; }
-      .fi4 { animation: fi .6s ease-out .7s both; }
-      .fi5 { animation: fi .6s ease-out .9s both; }
-      .fi6 { animation: fi .6s ease-out 1.1s both; }
-      .fi7 { animation: fi .6s ease-out 1.3s both; }
-      @keyframes fi {
-        from { opacity:0; transform:translateY(5px); }
-        to   { opacity:1; transform:translateY(0); }
-      }
-      .gb1 { animation: gb .5s ease-out 1.4s both; transform-box:fill-box; transform-origin:bottom; }
-      .gb2 { animation: gb .5s ease-out 1.5s both; transform-box:fill-box; transform-origin:bottom; }
-      .gb3 { animation: gb .5s ease-out 1.6s both; transform-box:fill-box; transform-origin:bottom; }
-      .gb4 { animation: gb .5s ease-out 1.7s both; transform-box:fill-box; transform-origin:bottom; }
-      .gb5 { animation: gb .5s ease-out 1.8s both; transform-box:fill-box; transform-origin:bottom; }
-      .gb6 { animation: gb .5s ease-out 1.9s both; transform-box:fill-box; transform-origin:bottom; }
-      .gb7 { animation: gb .5s ease-out 2.0s both; transform-box:fill-box; transform-origin:bottom; }
-      .gb8 { animation: gb .5s ease-out 2.1s both; transform-box:fill-box; transform-origin:bottom; }
-      .gb9 { animation: gb .5s ease-out 2.2s both; transform-box:fill-box; transform-origin:bottom; }
-      .gb10{ animation: gb .5s ease-out 2.3s both; transform-box:fill-box; transform-origin:bottom; }
-      .gb11{ animation: gb .5s ease-out 2.4s both; transform-box:fill-box; transform-origin:bottom; }
-      .gb12{ animation: gb .5s ease-out 2.5s both; transform-box:fill-box; transform-origin:bottom; }
-      @keyframes gb {
-        from { transform: scaleY(0); }
-        to   { transform: scaleY(1); }
-      }
-    </style>
-    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
-      <path d="M32 0L0 0 0 32" fill="none" stroke="#39d353" stroke-width="0.3" opacity="0.12"/>
-    </pattern>
-  </defs>
+[![capsule](https://capsule-render.vercel.app/api?type=waving&color=0d1117&customColorList=0,2,2,5,30&height=200&section=header&text=Prakshal%20Doshi&fontSize=48&fontColor=39d353&fontAlignY=35&desc=DevOps%20%2F%20SRE%20Engineer%20%C2%B7%20keeping%20prod%20alive%20%C2%B7%20chaos%20enjoyer&descAlignY=58&descSize=16&descColor=8b949e&animation=fadeIn)](https://github.com/doshiprakshal)
 
-  <!-- bg -->
-  <rect width="800" height="500" rx="12" fill="#0d1117"/>
-  <rect width="800" height="500" rx="12" fill="url(#grid)"/>
+[![typing](https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=16&duration=2800&pause=1000&color=39D353&center=true&vCenter=true&multiline=false&width=600&lines=❯+role%3A+DevOps+%2F+SRE+Engineer;❯+mttr%3A+%3C+4+min+%7C+uptime%3A+99.97%25;❯+philosophy%3A+"toil+is+a+bug+·+automate+or+die";❯+focus%3A+reliability+·+IaC+·+chaos+engineering;❯+status%3A+systems+nominal+🟢)](https://github.com/doshiprakshal)
 
-  <!-- top green accent bar -->
-  <rect x="0" y="0" width="800" height="3" rx="2" fill="#39d353" opacity="0.9"/>
+![status](https://img.shields.io/badge/status-systems_nominal-39d353?style=flat-square&logo=statuspage&logoColor=white)
+![uptime](https://img.shields.io/badge/uptime-99.97%25-39d353?style=flat-square)
+![mttr](https://img.shields.io/badge/MTTR-%3C4min-79c0ff?style=flat-square)
+![open](https://img.shields.io/badge/open_to-SRE_%2F_Platform_%2F_Infra-bc8cff?style=flat-square)
 
-  <!-- animated scan line -->
-  <rect class="scan" x="0" y="0" width="800" height="2" fill="#39d353" opacity="0.6"/>
+</div>
 
-  <!-- ══════ HEADER ROW ══════ -->
+---
 
-  <!-- avatar -->
-  <circle cx="72" cy="72" r="40" fill="#161b22" stroke="#39d353" stroke-width="2"/>
-  <circle class="pulsering" cx="72" cy="72" r="40" fill="none" stroke="#39d353" stroke-width="1.5"/>
-  <text x="72" y="78" text-anchor="middle" fill="#39d353" font-family="'Courier New',monospace" font-size="14" font-weight="700">SRE</text>
+## `$ cat about.yaml`
 
-  <!-- status dot + label -->
-  <circle class="statusdot" cx="124" cy="42" r="5" fill="#39d353"/>
-  <text x="133" y="46" fill="#39d353" font-family="'Courier New',monospace" font-size="9.5">systems nominal · uptime 99.97%</text>
+```yaml
+role:       DevOps / SRE Engineer
+location:   San Jose, US
+focus:
+  - platform reliability
+  - infrastructure-as-code
+  - chaos engineering
+  - developer experience
 
-  <!-- name -->
-  <text class="fi1" x="122" y="68" fill="#f0f6fc" font-family="'Courier New',monospace" font-size="24" font-weight="700">Your Name</text>
+passion:    turning 3am pages into GitHub Actions
+philosophy: "toil is a bug · automate or die"
 
-  <!-- handle -->
-  <text class="fi1" x="124" y="88" fill="#39d353" font-family="'Courier New',monospace" font-size="12">@yourusername</text>
+currently_learning:
+  - eBPF observability
+  - platform engineering patterns
+  - AI-assisted incident response
 
-  <!-- tagline -->
-  <text class="fi2" x="124" y="108" fill="#8b949e" font-family="'Courier New',monospace" font-size="11">DevOps / SRE · keeping prod alive · chaos enjoyer</text>
+mttr:       "< 4 min"
+availability: "99.97%"
+pipelines_shipped: 400+
+```
 
-  <!-- divider -->
-  <line x1="24" y1="132" x2="776" y2="132" stroke="#21262d" stroke-width="1"/>
+---
 
-  <!-- ══════ TWO COLUMNS ══════ -->
+## `$ kubectl get stack --all-namespaces`
 
-  <!-- LEFT: terminal block  x=24 y=146 w=456 h=196 -->
-  <rect x="24" y="146" width="456" height="196" rx="8" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+**Orchestration & Infrastructure**
 
-  <!-- terminal traffic lights -->
-  <circle cx="46" cy="164" r="5" fill="#ff5f57"/>
-  <circle cx="62" cy="164" r="5" fill="#febc2e"/>
-  <circle cx="78" cy="164" r="5" fill="#28c840"/>
-  <text x="96" y="168" fill="#6e7681" font-family="'Courier New',monospace" font-size="10">~ cat about.yaml</text>
-  <line x1="32" y1="176" x2="472" y2="176" stroke="#21262d" stroke-width="1"/>
+![Kubernetes](https://img.shields.io/badge/Kubernetes-326CE5?style=flat-square&logo=kubernetes&logoColor=white)
+![Terraform](https://img.shields.io/badge/Terraform-7B42BC?style=flat-square&logo=terraform&logoColor=white)
+![Helm](https://img.shields.io/badge/Helm-0F1689?style=flat-square&logo=helm&logoColor=white)
+![ArgoCD](https://img.shields.io/badge/ArgoCD-EF7B4D?style=flat-square&logo=argo&logoColor=white)
+![Ansible](https://img.shields.io/badge/Ansible-EE0000?style=flat-square&logo=ansible&logoColor=white)
 
-  <!-- terminal lines: prompt + key + value, 18px rows starting y=196 -->
-  <text class="fi2" x="40" y="196" fill="#39d353" font-family="'Courier New',monospace" font-size="11">❯</text>
-  <text class="fi2" x="56" y="196" fill="#79c0ff" font-family="'Courier New',monospace" font-size="11">role:</text>
-  <text class="fi2" x="120" y="196" fill="#f0f6fc" font-family="'Courier New',monospace" font-size="11">DevOps / SRE Engineer</text>
+**Cloud Platforms**
 
-  <text class="fi3" x="40" y="214" fill="#39d353" font-family="'Courier New',monospace" font-size="11">❯</text>
-  <text class="fi3" x="56" y="214" fill="#79c0ff" font-family="'Courier New',monospace" font-size="11">focus:</text>
-  <text class="fi3" x="120" y="214" fill="#f0f6fc" font-family="'Courier New',monospace" font-size="11">reliability · IaC · chaos eng</text>
+![AWS](https://img.shields.io/badge/AWS-232F3E?style=flat-square&logo=amazonaws&logoColor=white)
+![GCP](https://img.shields.io/badge/GCP-4285F4?style=flat-square&logo=googlecloud&logoColor=white)
 
-  <text class="fi4" x="40" y="232" fill="#39d353" font-family="'Courier New',monospace" font-size="11">❯</text>
-  <text class="fi4" x="56" y="232" fill="#79c0ff" font-family="'Courier New',monospace" font-size="11">mttr:</text>
-  <text class="fi4" x="120" y="232" fill="#39d353" font-family="'Courier New',monospace" font-size="11">&lt; 4 min</text>
+**Observability & Reliability**
 
-  <text class="fi5" x="40" y="250" fill="#39d353" font-family="'Courier New',monospace" font-size="11">❯</text>
-  <text class="fi5" x="56" y="250" fill="#79c0ff" font-family="'Courier New',monospace" font-size="11">uptime:</text>
-  <text class="fi5" x="120" y="250" fill="#39d353" font-family="'Courier New',monospace" font-size="11">99.97%</text>
+![Prometheus](https://img.shields.io/badge/Prometheus-E6522C?style=flat-square&logo=prometheus&logoColor=white)
+![Grafana](https://img.shields.io/badge/Grafana-F46800?style=flat-square&logo=grafana&logoColor=white)
+![PagerDuty](https://img.shields.io/badge/PagerDuty-06AC38?style=flat-square&logo=pagerduty&logoColor=white)
+![Datadog](https://img.shields.io/badge/Datadog-632CA6?style=flat-square&logo=datadog&logoColor=white)
 
-  <text class="fi6" x="40" y="268" fill="#39d353" font-family="'Courier New',monospace" font-size="11">❯</text>
-  <text class="fi6" x="56" y="268" fill="#79c0ff" font-family="'Courier New',monospace" font-size="11">philosophy:</text>
-  <text class="fi6" x="152" y="268" fill="#f0f6fc" font-family="'Courier New',monospace" font-size="11">"toil is a bug · automate or die"</text>
+**CI/CD & Automation**
 
-  <text class="fi7" x="40" y="286" fill="#6e7681" font-family="'Courier New',monospace" font-size="11"># open to SRE · platform · infra roles</text>
+![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=flat-square&logo=githubactions&logoColor=white)
+![GitLab CI](https://img.shields.io/badge/GitLab_CI-FC6D26?style=flat-square&logo=gitlab&logoColor=white)
+![Jenkins](https://img.shields.io/badge/Jenkins-D24939?style=flat-square&logo=jenkins&logoColor=white)
 
-  <!-- blinking cursor -->
-  <rect class="blink" x="40" y="298" width="8" height="13" rx="1" fill="#39d353"/>
+**Languages**
 
-  <!-- RIGHT: SLO panel  x=496 y=146 w=280 h=196 -->
-  <rect x="496" y="146" width="280" height="196" rx="8" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
+![Bash](https://img.shields.io/badge/Bash-4EAA25?style=flat-square&logo=gnubash&logoColor=white)
+![Go](https://img.shields.io/badge/Go-00ADD8?style=flat-square&logo=go&logoColor=white)
+![YAML](https://img.shields.io/badge/YAML-CB171E?style=flat-square&logo=yaml&logoColor=white)
 
-  <!-- SLO header -->
-  <text x="514" y="166" fill="#6e7681" font-family="'Courier New',monospace" font-size="9" letter-spacing="2">SLO DASHBOARD</text>
-  <line x1="504" y1="174" x2="768" y2="174" stroke="#21262d" stroke-width="1"/>
+---
 
-  <!-- SLO rows: label left, value right -->
-  <text x="514" y="194" fill="#8b949e" font-family="'Courier New',monospace" font-size="10">availability</text>
-  <text x="766" y="194" text-anchor="end" fill="#39d353" font-family="'Courier New',monospace" font-size="10" font-weight="700">99.97%</text>
+## `$ cat slo-dashboard.json`
 
-  <text x="514" y="212" fill="#8b949e" font-family="'Courier New',monospace" font-size="10">MTTR</text>
-  <text x="766" y="212" text-anchor="end" fill="#39d353" font-family="'Courier New',monospace" font-size="10" font-weight="700">&lt; 4 min</text>
+<div align="center">
 
-  <text x="514" y="230" fill="#8b949e" font-family="'Courier New',monospace" font-size="10">deploy freq</text>
-  <text x="766" y="230" text-anchor="end" fill="#79c0ff" font-family="'Courier New',monospace" font-size="10" font-weight="700">12x / week</text>
+| metric | value | target |
+|--------|-------|--------|
+| 🟢 availability | **99.97%** | 99.9% |
+| ⚡ MTTR | **< 4 min** | < 15 min |
+| 🚀 deploy frequency | **12x / week** | daily |
+| 🔁 pipelines shipped | **400+** | — |
+| 🔥 incidents → runbooks | **100%** | 100% |
 
-  <text x="514" y="248" fill="#8b949e" font-family="'Courier New',monospace" font-size="10">pipelines shipped</text>
-  <text x="766" y="248" text-anchor="end" fill="#79c0ff" font-family="'Courier New',monospace" font-size="10" font-weight="700">400+</text>
+</div>
 
-  <text x="514" y="266" fill="#8b949e" font-family="'Courier New',monospace" font-size="10">incidents → runbooks</text>
-  <text x="766" y="266" text-anchor="end" fill="#39d353" font-family="'Courier New',monospace" font-size="10" font-weight="700">100%</text>
+---
 
-  <!-- commit activity sub-label -->
-  <text x="514" y="288" fill="#6e7681" font-family="'Courier New',monospace" font-size="9" letter-spacing="1.5">COMMIT ACTIVITY</text>
+## `$ ls -la ./projects`
 
-  <!-- 12 activity bars, bottomed at y=334, each 18px wide, 6px gap, starting x=514 -->
-  <!-- heights: 14 22 18 30 24 36 20 32 16 34 28 26 -->
-  <rect class="gb1"  x="514" y="320" width="16" height="14" rx="2" fill="#39d353" opacity="0.45"/>
-  <rect class="gb2"  x="532" y="312" width="16" height="22" rx="2" fill="#39d353" opacity="0.55"/>
-  <rect class="gb3"  x="550" y="316" width="16" height="18" rx="2" fill="#39d353" opacity="0.5"/>
-  <rect class="gb4"  x="568" y="304" width="16" height="30" rx="2" fill="#39d353" opacity="0.8"/>
-  <rect class="gb5"  x="586" y="310" width="16" height="24" rx="2" fill="#39d353" opacity="0.65"/>
-  <rect class="gb6"  x="604" y="298" width="16" height="36" rx="2" fill="#39d353" opacity="1"/>
-  <rect class="gb7"  x="622" y="314" width="16" height="20" rx="2" fill="#39d353" opacity="0.55"/>
-  <rect class="gb8"  x="640" y="302" width="16" height="32" rx="2" fill="#39d353" opacity="0.85"/>
-  <rect class="gb9"  x="658" y="318" width="16" height="16" rx="2" fill="#39d353" opacity="0.45"/>
-  <rect class="gb10" x="676" y="300" width="16" height="34" rx="2" fill="#39d353" opacity="0.9"/>
-  <rect class="gb11" x="694" y="306" width="16" height="28" rx="2" fill="#39d353" opacity="0.7"/>
-  <rect class="gb12" x="712" y="308" width="16" height="26" rx="2" fill="#39d353" opacity="0.65"/>
+### ⚙ [k8s-autoscaler-policy](https://github.com/yourusername/k8s-autoscaler-policy)
+> Custom HPA + KEDA rules that **cut cloud spend by 38%** during off-peak hours
 
-  <!-- ══════ STACK BADGES ROW ══════ -->
-  <text x="24" y="370" fill="#6e7681" font-family="'Courier New',monospace" font-size="9" letter-spacing="2">STACK</text>
+```bash
+$ kubectl apply -f autoscaler-policy.yaml
+# → scaled 47 deployments · saved $2,400/mo
+```
+![Kubernetes](https://img.shields.io/badge/-Kubernetes-326CE5?style=flat-square&logo=kubernetes&logoColor=white)
+![Python](https://img.shields.io/badge/-Python-3776AB?style=flat-square&logo=python&logoColor=white)
+![cost-opt](https://img.shields.io/badge/-cost--opt-39d353?style=flat-square)
 
-  <!-- Row 1 of badges: y=378, height=18 -->
-  <!-- Kubernetes -->
-  <rect x="24"  y="378" width="82" height="18" rx="4" fill="none" stroke="#39d353" stroke-width="0.8" opacity="0.5"/>
-  <text x="65"  y="391" text-anchor="middle" fill="#39d353" font-family="'Courier New',monospace" font-size="9">Kubernetes</text>
-  <!-- Terraform -->
-  <rect x="112" y="378" width="72" height="18" rx="4" fill="none" stroke="#bc8cff" stroke-width="0.8" opacity="0.5"/>
-  <text x="148" y="391" text-anchor="middle" fill="#bc8cff" font-family="'Courier New',monospace" font-size="9">Terraform</text>
-  <!-- ArgoCD -->
-  <rect x="190" y="378" width="58" height="18" rx="4" fill="none" stroke="#39d353" stroke-width="0.8" opacity="0.5"/>
-  <text x="219" y="391" text-anchor="middle" fill="#39d353" font-family="'Courier New',monospace" font-size="9">ArgoCD</text>
-  <!-- Prometheus -->
-  <rect x="254" y="378" width="84" height="18" rx="4" fill="none" stroke="#79c0ff" stroke-width="0.8" opacity="0.5"/>
-  <text x="296" y="391" text-anchor="middle" fill="#79c0ff" font-family="'Courier New',monospace" font-size="9">Prometheus</text>
-  <!-- Grafana -->
-  <rect x="344" y="378" width="62" height="18" rx="4" fill="none" stroke="#ff7b01" stroke-width="0.8" opacity="0.5"/>
-  <text x="375" y="391" text-anchor="middle" fill="#ff7b01" font-family="'Courier New',monospace" font-size="9">Grafana</text>
-  <!-- GitHub Actions -->
-  <rect x="412" y="378" width="110" height="18" rx="4" fill="none" stroke="#39d353" stroke-width="0.8" opacity="0.5"/>
-  <text x="467" y="391" text-anchor="middle" fill="#39d353" font-family="'Courier New',monospace" font-size="9">GitHub Actions</text>
+---
 
-  <!-- Row 2 of badges: y=402 -->
-  <!-- AWS -->
-  <rect x="24"  y="402" width="44" height="18" rx="4" fill="none" stroke="#ff7b01" stroke-width="0.8" opacity="0.5"/>
-  <text x="46"  y="415" text-anchor="middle" fill="#ff7b01" font-family="'Courier New',monospace" font-size="9">AWS</text>
-  <!-- GCP -->
-  <rect x="74"  y="402" width="44" height="18" rx="4" fill="none" stroke="#79c0ff" stroke-width="0.8" opacity="0.5"/>
-  <text x="96"  y="415" text-anchor="middle" fill="#79c0ff" font-family="'Courier New',monospace" font-size="9">GCP</text>
-  <!-- Helm -->
-  <rect x="124" y="402" width="44" height="18" rx="4" fill="none" stroke="#bc8cff" stroke-width="0.8" opacity="0.5"/>
-  <text x="146" y="415" text-anchor="middle" fill="#bc8cff" font-family="'Courier New',monospace" font-size="9">Helm</text>
-  <!-- Ansible -->
-  <rect x="174" y="402" width="58" height="18" rx="4" fill="none" stroke="#f85149" stroke-width="0.8" opacity="0.5"/>
-  <text x="203" y="415" text-anchor="middle" fill="#f85149" font-family="'Courier New',monospace" font-size="9">Ansible</text>
-  <!-- Python -->
-  <rect x="238" y="402" width="54" height="18" rx="4" fill="none" stroke="#79c0ff" stroke-width="0.8" opacity="0.5"/>
-  <text x="265" y="415" text-anchor="middle" fill="#79c0ff" font-family="'Courier New',monospace" font-size="9">Python</text>
-  <!-- Bash -->
-  <rect x="298" y="402" width="44" height="18" rx="4" fill="none" stroke="#4eaa25" stroke-width="0.8" opacity="0.5"/>
-  <text x="320" y="415" text-anchor="middle" fill="#4eaa25" font-family="'Courier New',monospace" font-size="9">Bash</text>
-  <!-- PagerDuty -->
-  <rect x="348" y="402" width="80" height="18" rx="4" fill="none" stroke="#06ac38" stroke-width="0.8" opacity="0.5"/>
-  <text x="388" y="415" text-anchor="middle" fill="#06ac38" font-family="'Courier New',monospace" font-size="9">PagerDuty</text>
-  <!-- Datadog -->
-  <rect x="434" y="402" width="64" height="18" rx="4" fill="none" stroke="#bc8cff" stroke-width="0.8" opacity="0.5"/>
-  <text x="466" y="415" text-anchor="middle" fill="#bc8cff" font-family="'Courier New',monospace" font-size="9">Datadog</text>
+### ◈ [terraform-platform-modules](https://github.com/yourusername/terraform-platform-modules)
+> Opinionated IaC modules — VPC, EKS, RDS — **zero-to-prod in 12 minutes**
 
-  <!-- ══════ FOOTER ══════ -->
-  <line x1="24" y1="438" x2="776" y2="438" stroke="#21262d" stroke-width="1"/>
-  <text x="24"  y="452" fill="#6e7681" font-family="'Courier New',monospace" font-size="9">open to SRE · platform engineering · infra roles</text>
-  <text x="776" y="452" text-anchor="end" fill="#39d353" font-family="'Courier New',monospace" font-size="9">last deployed: today · ⚙ systems nominal</text>
+```bash
+$ terraform apply -target=module.platform
+# → 47 resources created · 0 errors · 12m 03s
+```
+![Terraform](https://img.shields.io/badge/-Terraform-7B42BC?style=flat-square&logo=terraform&logoColor=white)
+![AWS](https://img.shields.io/badge/-AWS-232F3E?style=flat-square&logo=amazonaws&logoColor=white)
+![modules](https://img.shields.io/badge/-modules-79c0ff?style=flat-square)
 
-</svg>
+---
+
+### ◉ [chaos-runbook-bot](https://github.com/yourusername/chaos-runbook-bot)
+> Slack bot that **auto-generates runbooks** from past incidents using LLMs + PagerDuty data
+
+```bash
+$ python bot.py --incident INC-4821
+# → runbook generated · 3 similar incidents found · MTTR ↓ 40%
+```
+![Python](https://img.shields.io/badge/-Python-3776AB?style=flat-square&logo=python&logoColor=white)
+![Slack](https://img.shields.io/badge/-Slack-4A154B?style=flat-square&logo=slack&logoColor=white)
+![LLM](https://img.shields.io/badge/-LLM-bc8cff?style=flat-square)
+
+---
+
+## `$ tail -f /var/log/github-stats.log`
+
+<div align="center">
+
+![GitHub Stats](https://github-readme-stats.vercel.app/api?username=yourusername&show_icons=true&theme=github_dark&hide_border=true&bg_color=0d1117&title_color=39d353&icon_color=39d353&text_color=8b949e&border_radius=8)
+
+![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=yourusername&layout=compact&theme=github_dark&hide_border=true&bg_color=0d1117&title_color=39d353&text_color=8b949e&border_radius=8)
+
+![GitHub Streak](https://streak-stats.demolab.com?user=yourusername&theme=github-dark-blue&hide_border=true&background=0d1117&ring=39d353&fire=39d353&currStreakLabel=39d353)
+
+</div>
+
+---
+
+## `$ cat /etc/motd`
+
+```
+╔─────────────────────────────────────────────────────────────╗
+│                                                             │
+│   "The best on-call rotation is the one you never need."   │
+│                                                             │
+│   → automate the toil                                      │
+│   → instrument everything                                   │
+│   → write the runbook before the incident                  │
+│   → blameless post-mortems, always                         │
+│                                                             │
+╚─────────────────────────────────────────────────────────────╝
+```
+
+---
+
+## `$ ping connect`
+
+<div align="center">
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/yourusername)
+[![Blog](https://img.shields.io/badge/Blog-39d353?style=for-the-badge&logo=hashnode&logoColor=white)](https://yourblog.dev)
+[![Email](https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:you@email.com)
+[![Resume](https://img.shields.io/badge/Resume-79c0ff?style=for-the-badge&logo=adobeacrobatreader&logoColor=white)](https://yourresume.dev)
+
+*open to SRE · platform engineering · infrastructure · DevOps roles*
+
+![Visitor Count](https://komarev.com/ghpvc/?username=yourusername&color=39d353&style=flat-square&label=profile+views)
+
+</div>
+
+[![capsule-footer](https://capsule-render.vercel.app/api?type=waving&color=0d1117&customColorList=0,2,2,5,30&height=100&section=footer&fontColor=39d353)](https://github.com/yourusername)
