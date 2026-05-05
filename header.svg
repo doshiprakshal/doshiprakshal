@@ -1,5 +1,5 @@
 <svg width="100%" viewBox="0 0 800 280" xmlns="http://www.w3.org/2000/svg" role="img">
-  <title>Your Name - SRE Header</title>
+  <title>Prakshal Doshi - SRE Header</title>
   <desc>Animated terminal header for DevOps SRE GitHub profile</desc>
   <defs>
     <linearGradient id="topbar" x1="0%" y1="0%" x2="100%" y2="0%">
@@ -52,13 +52,13 @@
 
   <!-- name -->
   <text x="124" y="80" fill="#f0f6fc" font-family="'Courier New',monospace" font-size="24" font-weight="700" opacity="0">
-    Your Name
+    Prakshal Doshi
     <animate attributeName="opacity" values="0;1" dur="0.5s" begin="0.2s" fill="freeze"/>
   </text>
 
   <!-- handle -->
   <text x="126" y="100" fill="#39d353" font-family="'Courier New',monospace" font-size="12" opacity="0">
-    @yourusername
+    @doshiprakshal
     <animate attributeName="opacity" values="0;1" dur="0.5s" begin="0.4s" fill="freeze"/>
   </text>
 
