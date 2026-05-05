@@ -1,5 +1,7 @@
 <div align="center">
 
+![header](./header.svg)
+
 [![header](https://capsule-render.vercel.app/api?type=waving&color=0d1117&customColorList=0,2,2,5,30&height=220&section=header&text=Prakshal%20Doshi&fontSize=52&fontColor=39d353&fontAlignY=38&desc=Site%20Reliability%20Engineer%20%40%20Apple%20%7C%20Platform%20%7C%20Cloud%20%7C%20GenAI&descAlignY=60&descSize=16&descColor=8b949e&animation=fadeIn)](https://github.com/doshiprakshal)
 
 [![typing](https://readme-typing-svg.demolab.com?cerfont=JetBrains+Mono&size=15&duration=2600&pause=900&color=39D353&center=true&vCenter=true&width=680&lines=❯+role%3A+Site+Reliability+Engineer+%40+Apple;❯+uptime%3A+99.97%25+%7C+MTTR%3A+%3C+4+min;❯+managing+20%2C000%2B+TPS+across+Apple+Cloud+%2B+AWS;❯+philosophy%3A+"toil+is+a+bug+·+automate+or+die";❯+cert-related+incidents+↓+95%25+via+automation;❯+status%3A+systems+nominal+🟢)](https://github.com/doshiprakshal)
