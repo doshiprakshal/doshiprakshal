@@ -1,0 +1,236 @@
+<svg width="100%" viewBox="0 0 800 520" xmlns="http://www.w3.org/2000/svg" role="img">
+  <title>DevOps SRE Terminal - about.yaml</title>
+  <desc>Animated terminal showing full DevOps/SRE profile YAML with typewriter effect</desc>
+
+  <!-- background -->
+  <rect width="800" height="520" rx="10" fill="#0d1117"/>
+
+  <!-- grid -->
+  <defs>
+    <pattern id="grid" width="28" height="28" patternUnits="userSpaceOnUse">
+      <path d="M28 0L0 0 0 28" fill="none" stroke="#39d353" stroke-width="0.25" opacity="0.1"/>
+    </pattern>
+    <clipPath id="svgclip"><rect width="800" height="520" rx="10"/></clipPath>
+    <linearGradient id="scangrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#39d353" stop-opacity="0"/>
+      <stop offset="45%"  stop-color="#39d353" stop-opacity="0.04"/>
+      <stop offset="50%"  stop-color="#39d353" stop-opacity="0.09"/>
+      <stop offset="55%"  stop-color="#39d353" stop-opacity="0.04"/>
+      <stop offset="100%" stop-color="#39d353" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="520" rx="10" fill="url(#grid)"/>
+
+  <!-- scan line -->
+  <rect clip-path="url(#svgclip)" x="0" y="0" width="800" height="90" fill="url(#scangrad)">
+    <animateTransform attributeName="transform" type="translate" from="0,-90" to="0,520" dur="6s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- top bar -->
+  <rect x="0" y="0" width="800" height="3" rx="2" fill="#39d353" opacity="0.85"/>
+
+  <!-- terminal window chrome -->
+  <rect x="16" y="18" width="768" height="486" rx="8" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+
+  <!-- traffic lights -->
+  <circle cx="40"  cy="36" r="5.5" fill="#ff5f57"/>
+  <circle cx="58"  cy="36" r="5.5" fill="#febc2e"/>
+  <circle cx="76"  cy="36" r="5.5" fill="#28c840"/>
+
+  <!-- terminal title -->
+  <text x="400" y="41" text-anchor="middle" fill="#6e7681" font-family="'Courier New',monospace" font-size="11">yourusername@apple-sre ~ cat about.yaml</text>
+
+  <!-- title divider -->
+  <line x1="24" y1="50" x2="776" y2="50" stroke="#21262d" stroke-width="1"/>
+
+  <!-- ── CONTENT: each line has a rect mask that shrinks to reveal text ── -->
+  <!-- Lines start at y=72, spacing=19px -->
+  <!-- Each line: text element + white rect that animates width from full to 0 -->
+  <!-- Total lines: 30. Timing: each begins 0.18s after previous -->
+
+  <!-- helper macro pattern: text at x=36, mask rect x=36 w=728 animates to w=0 -->
+
+  <!-- L1 -->
+  <text x="36" y="72" font-family="'Courier New',monospace" font-size="12">
+    <tspan fill="#6e7681"># ──────────────────────────────────────────</tspan>
+  </text>
+  <rect x="36" y="57" width="728" height="18" fill="#161b22">
+    <animate attributeName="width" from="728" to="0" dur="0.01s" begin="0.2s" fill="freeze"/>
+  </rect>
+
+  <!-- L2 -->
+  <text x="36" y="91" font-family="'Courier New',monospace" font-size="12">
+    <tspan fill="#6e7681"># profile:</tspan><tspan fill="#f0f6fc"> yourusername</tspan><tspan fill="#6e7681">  |  updated: 2025</tspan>
+  </text>
+  <rect x="36" y="76" width="728" height="18" fill="#161b22">
+    <animate attributeName="width" from="728" to="0" dur="0.01s" begin="0.38s" fill="freeze"/>
+  </rect>
+
+  <!-- L3 -->
+  <text x="36" y="110" font-family="'Courier New',monospace" font-size="12">
+    <tspan fill="#6e7681"># ──────────────────────────────────────────</tspan>
+  </text>
+  <rect x="36" y="95" width="728" height="18" fill="#161b22">
+    <animate attributeName="width" from="728" to="0" dur="0.01s" begin="0.56s" fill="freeze"/>
+  </rect>
+
+  <!-- L4 blank -->
+  <rect x="36" y="114" width="728" height="18" fill="#161b22">
+    <animate attributeName="width" from="728" to="0" dur="0.01s" begin="0.62s" fill="freeze"/>
+  </rect>
+
+  <!-- L5 -->
+  <text x="36" y="148" font-family="'Courier New',monospace" font-size="12">
+    <tspan fill="#79c0ff">name</tspan><tspan fill="#f0f6fc">:       </tspan><tspan fill="#f0f6fc">Your Name</tspan>
+  </text>
+  <rect x="36" y="133" width="728" height="18" fill="#161b22">
+    <animate attributeName="width" from="728" to="0" dur="0.01s" begin="0.72s" fill="freeze"/>
+  </rect>
+
+  <!-- L6 -->
+  <text x="36" y="167" font-family="'Courier New',monospace" font-size="12">
+    <tspan fill="#79c0ff">role</tspan><tspan fill="#f0f6fc">:       </tspan><tspan fill="#39d353">Site Reliability Engineer</tspan>
+  </text>
+  <rect x="36" y="152" width="728" height="18" fill="#161b22">
+    <animate attributeName="width" from="728" to="0" dur="0.01s" begin="0.90s" fill="freeze"/>
+  </rect>
+
+  <!-- L7 -->
+  <text x="36" y="186" font-family="'Courier New',monospace" font-size="12">
+    <tspan fill="#79c0ff">company</tspan><tspan fill="#f0f6fc">:     </tspan><tspan fill="#f0f6fc">Apple </tspan><tspan fill="#6e7681">(Customer Systems · AppleCare)</tspan>
+  </text>
+  <rect x="36" y="171" width="728" height="18" fill="#161b22">
+    <animate attributeName="width" from="728" to="0" dur="0.01s" begin="1.08s" fill="freeze"/>
+  </rect>
+
+  <!-- L8 -->
+  <text x="36" y="205" font-family="'Courier New',monospace" font-size="12">
+    <tspan fill="#79c0ff">location</tspan><tspan fill="#f0f6fc">:    </tspan><tspan fill="#f0f6fc">United States</tspan>
+  </text>
+  <rect x="36" y="190" width="728" height="18" fill="#161b22">
+    <animate attributeName="width" from="728" to="0" dur="0.01s" begin="1.26s" fill="freeze"/>
+  </rect>
+
+  <!-- L9 -->
+  <text x="36" y="224" font-family="'Courier New',monospace" font-size="12">
+    <tspan fill="#79c0ff">team_size</tspan><tspan fill="#f0f6fc">:   </tspan><tspan fill="#39d353">11 SREs</tspan><tspan fill="#6e7681"> (global lead)</tspan>
+  </text>
+  <rect x="36" y="209" width="728" height="18" fill="#161b22">
+    <animate attributeName="width" from="728" to="0" dur="0.01s" begin="1.44s" fill="freeze"/>
+  </rect>
+
+  <!-- L10 -->
+  <text x="36" y="243" font-family="'Courier New',monospace" font-size="12">
+    <tspan fill="#79c0ff">workload</tspan><tspan fill="#f0f6fc">:    </tspan><tspan fill="#39d353">20,000+ TPS</tspan><tspan fill="#6e7681"> · Apple Cloud + AWS</tspan>
+  </text>
+  <rect x="36" y="228" width="728" height="18" fill="#161b22">
+    <animate attributeName="width" from="728" to="0" dur="0.01s" begin="1.62s" fill="freeze"/>
+  </rect>
+
+  <!-- L11 blank -->
+  <rect x="36" y="247" width="728" height="18" fill="#161b22">
+    <animate attributeName="width" from="728" to="0" dur="0.01s" begin="1.68s" fill="freeze"/>
+  </rect>
+
+  <!-- L12 -->
+  <text x="36" y="281" font-family="'Courier New',monospace" font-size="12">
+    <tspan fill="#79c0ff">focus</tspan><tspan fill="#f0f6fc">:</tspan>
+  </text>
+  <rect x="36" y="266" width="728" height="18" fill="#161b22">
+    <animate attributeName="width" from="728" to="0" dur="0.01s" begin="1.80s" fill="freeze"/>
+  </rect>
+
+  <!-- L13 -->
+  <text x="36" y="300" font-family="'Courier New',monospace" font-size="12">
+    <tspan fill="#6e7681">  - </tspan><tspan fill="#f0f6fc">LLM inference infrastructure </tspan><tspan fill="#6e7681">&amp; AI-powered agents (MCP)</tspan>
+  </text>
+  <rect x="36" y="285" width="728" height="18" fill="#161b22">
+    <animate attributeName="width" from="728" to="0" dur="0.01s" begin="1.95s" fill="freeze"/>
+  </rect>
+
+  <!-- L14 -->
+  <text x="36" y="319" font-family="'Courier New',monospace" font-size="12">
+    <tspan fill="#6e7681">  - </tspan><tspan fill="#f0f6fc">multi-region active-active deployments</tspan>
+  </text>
+  <rect x="36" y="304" width="728" height="18" fill="#161b22">
+    <animate attributeName="width" from="728" to="0" dur="0.01s" begin="2.10s" fill="freeze"/>
+  </rect>
+
+  <!-- L15 -->
+  <text x="36" y="338" font-family="'Courier New',monospace" font-size="12">
+    <tspan fill="#6e7681">  - </tspan><tspan fill="#f0f6fc">ChatOps deployments </tspan><tspan fill="#6e7681">(Slack + Ansible + AWS)</tspan>
+  </text>
+  <rect x="36" y="323" width="728" height="18" fill="#161b22">
+    <animate attributeName="width" from="728" to="0" dur="0.01s" begin="2.25s" fill="freeze"/>
+  </rect>
+
+  <!-- L16 -->
+  <text x="36" y="357" font-family="'Courier New',monospace" font-size="12">
+    <tspan fill="#6e7681">  - </tspan><tspan fill="#f0f6fc">cloud cost optimization </tspan><tspan fill="#6e7681">&amp; failover validation</tspan>
+  </text>
+  <rect x="36" y="342" width="728" height="18" fill="#161b22">
+    <animate attributeName="width" from="728" to="0" dur="0.01s" begin="2.40s" fill="freeze"/>
+  </rect>
+
+  <!-- L17 -->
+  <text x="36" y="376" font-family="'Courier New',monospace" font-size="12">
+    <tspan fill="#6e7681">  - </tspan><tspan fill="#f0f6fc">petabyte-scale Kubernetes migrations</tspan>
+  </text>
+  <rect x="36" y="361" width="728" height="18" fill="#161b22">
+    <animate attributeName="width" from="728" to="0" dur="0.01s" begin="2.55s" fill="freeze"/>
+  </rect>
+
+  <!-- L18 blank -->
+  <rect x="36" y="380" width="728" height="18" fill="#161b22">
+    <animate attributeName="width" from="728" to="0" dur="0.01s" begin="2.62s" fill="freeze"/>
+  </rect>
+
+  <!-- L19 -->
+  <text x="36" y="414" font-family="'Courier New',monospace" font-size="12">
+    <tspan fill="#79c0ff">metrics</tspan><tspan fill="#f0f6fc">:</tspan>
+  </text>
+  <rect x="36" y="399" width="728" height="18" fill="#161b22">
+    <animate attributeName="width" from="728" to="0" dur="0.01s" begin="2.72s" fill="freeze"/>
+  </rect>
+
+  <!-- L20 -->
+  <text x="36" y="433" font-family="'Courier New',monospace" font-size="12">
+    <tspan fill="#6e7681">  mttr:            </tspan><tspan fill="#39d353">"&lt; 4 min"</tspan>
+  </text>
+  <rect x="36" y="418" width="728" height="18" fill="#161b22">
+    <animate attributeName="width" from="728" to="0" dur="0.01s" begin="2.85s" fill="freeze"/>
+  </rect>
+
+  <!-- L21 -->
+  <text x="36" y="452" font-family="'Courier New',monospace" font-size="12">
+    <tspan fill="#6e7681">  availability:     </tspan><tspan fill="#39d353">"99.97%"</tspan>
+  </text>
+  <rect x="36" y="437" width="728" height="18" fill="#161b22">
+    <animate attributeName="width" from="728" to="0" dur="0.01s" begin="2.98s" fill="freeze"/>
+  </rect>
+
+  <!-- L22 -->
+  <text x="36" y="471" font-family="'Courier New',monospace" font-size="12">
+    <tspan fill="#6e7681">  cert_incidents:   </tspan><tspan fill="#39d353">"↓ 95%"</tspan>
+  </text>
+  <rect x="36" y="456" width="728" height="18" fill="#161b22">
+    <animate attributeName="width" from="728" to="0" dur="0.01s" begin="3.11s" fill="freeze"/>
+  </rect>
+
+  <!-- L23 -->
+  <text x="36" y="490" font-family="'Courier New',monospace" font-size="12">
+    <tspan fill="#6e7681">  rollout_time:     </tspan><tspan fill="#39d353">"↓ 30%"</tspan><tspan fill="#6e7681">  # ChatOps</tspan>
+  </text>
+  <rect x="36" y="475" width="728" height="18" fill="#161b22">
+    <animate attributeName="width" from="728" to="0" dur="0.01s" begin="3.24s" fill="freeze"/>
+  </rect>
+
+  <!-- blinking cursor at end -->
+  <rect x="36" y="497" width="8" height="13" rx="1" fill="#39d353">
+    <animate attributeName="opacity" values="1;0;1" dur="1.1s" begin="3.4s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- bottom bar -->
+  <rect x="0" y="517" width="800" height="3" rx="2" fill="#39d353" opacity="0.4"/>
+
+</svg>
