@@ -1,12 +1,15 @@
 <div align="center">
 
-[![capsule](https://capsule-render.vercel.app/api?type=waving&color=0d1117&customColorList=0,2,2,5,30&height=200&section=header&text=Prakshal%20Doshi&fontSize=48&fontColor=39d353&fontAlignY=35&desc=DevOps%20%2F%20SRE%20Engineer%20%C2%B7%20keeping%20prod%20alive%20%C2%B7%20chaos%20enjoyer&descAlignY=58&descSize=16&descColor=8b949e&animation=fadeIn)](https://github.com/doshiprakshal)
+[![header](https://capsule-render.vercel.app/api?type=waving&color=0d1117&customColorList=0,2,2,5,30&height=220&section=header&text=Prakshal%20Doshi&fontSize=52&fontColor=39d353&fontAlignY=38&desc=Site%20Reliability%20Engineer%20%40%20Apple%20%7C%20Platform%20%7C%20Cloud%20%7C%20GenAI&descAlignY=60&descSize=16&descColor=8b949e&animation=fadeIn)](https://github.com/doshiprakshal)
 
-[![typing](https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=16&duration=2800&pause=1000&color=39D353&center=true&vCenter=true&multiline=false&width=600&lines=❯+role%3A+DevOps+%2F+SRE+Engineer;❯+mttr%3A+%3C+4+min+%7C+uptime%3A+99.97%25;❯+philosophy%3A+"toil+is+a+bug+·+automate+or+die";❯+focus%3A+reliability+·+IaC+·+chaos+engineering;❯+status%3A+systems+nominal+🟢)](https://github.com/doshiprakshal)
+[![typing](https://readme-typing-svg.demolab.com?cerfont=JetBrains+Mono&size=15&duration=2600&pause=900&color=39D353&center=true&vCenter=true&width=680&lines=❯+role%3A+Site+Reliability+Engineer+%40+Apple;❯+uptime%3A+99.97%25+%7C+MTTR%3A+%3C+4+min;❯+managing+20%2C000%2B+TPS+across+Apple+Cloud+%2B+AWS;❯+philosophy%3A+"toil+is+a+bug+·+automate+or+die";❯+cert-related+incidents+↓+95%25+via+automation;❯+status%3A+systems+nominal+🟢)](https://github.com/doshiprakshal)
 
-![status](https://img.shields.io/badge/status-systems_nominal-39d353?style=flat-square&logo=statuspage&logoColor=white)
+<br/>
+
+![Apple](https://img.shields.io/badge/Apple-SRE-f0f6fc?style=flat-square&logo=apple&logoColor=white)
+![status](https://img.shields.io/badge/status-systems_nominal-39d353?style=flat-square)
 ![uptime](https://img.shields.io/badge/uptime-99.97%25-39d353?style=flat-square)
-![mttr](https://img.shields.io/badge/MTTR-%3C4min-79c0ff?style=flat-square)
+![tps](https://img.shields.io/badge/workload-20K+_TPS-79c0ff?style=flat-square)
 ![open](https://img.shields.io/badge/open_to-SRE_%2F_Platform_%2F_Infra-bc8cff?style=flat-square)
 
 </div>
@@ -16,63 +19,29 @@
 ## `$ cat about.yaml`
 
 ```yaml
-role:       DevOps / SRE Engineer
-location:   San Jose, US
-focus:
-  - platform reliability
-  - infrastructure-as-code
-  - chaos engineering
-  - developer experience
+name:       Prakshal Doshi
+role:       Site Reliability Engineer
+company:    Apple
+location:   United States
 
-passion:    turning 3am pages into GitHub Actions
+team_size:  11 SREs (global team lead)
+workload:   20,000+ TPS across AppleCare + new product launches
+
+focus:
+  - LLM inference infrastructure & AI-powered agents (MCP)
+  - Multi-region active-active deployments
+  - ChatOps-based deployments (Slack + Ansible + AWS)
+  - Cloud cost optimization & failover validation
+  - GenAI initiatives across SRE
+
 philosophy: "toil is a bug · automate or die"
 
-currently_learning:
-  - eBPF observability
-  - platform engineering patterns
-  - AI-assisted incident response
-
-mttr:       "< 4 min"
-availability: "99.97%"
-pipelines_shipped: 400+
+education:
+  degree:   MS Computer Science
+  school:   San Diego State University
+  gpa:      3.71 / 4.0
+  year:     2023
 ```
-
----
-
-## `$ kubectl get stack --all-namespaces`
-
-**Orchestration & Infrastructure**
-
-![Kubernetes](https://img.shields.io/badge/Kubernetes-326CE5?style=flat-square&logo=kubernetes&logoColor=white)
-![Terraform](https://img.shields.io/badge/Terraform-7B42BC?style=flat-square&logo=terraform&logoColor=white)
-![Helm](https://img.shields.io/badge/Helm-0F1689?style=flat-square&logo=helm&logoColor=white)
-![ArgoCD](https://img.shields.io/badge/ArgoCD-EF7B4D?style=flat-square&logo=argo&logoColor=white)
-![Ansible](https://img.shields.io/badge/Ansible-EE0000?style=flat-square&logo=ansible&logoColor=white)
-
-**Cloud Platforms**
-
-![AWS](https://img.shields.io/badge/AWS-232F3E?style=flat-square&logo=amazonaws&logoColor=white)
-![GCP](https://img.shields.io/badge/GCP-4285F4?style=flat-square&logo=googlecloud&logoColor=white)
-
-**Observability & Reliability**
-
-![Prometheus](https://img.shields.io/badge/Prometheus-E6522C?style=flat-square&logo=prometheus&logoColor=white)
-![Grafana](https://img.shields.io/badge/Grafana-F46800?style=flat-square&logo=grafana&logoColor=white)
-![PagerDuty](https://img.shields.io/badge/PagerDuty-06AC38?style=flat-square&logo=pagerduty&logoColor=white)
-![Datadog](https://img.shields.io/badge/Datadog-632CA6?style=flat-square&logo=datadog&logoColor=white)
-
-**CI/CD & Automation**
-
-![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=flat-square&logo=githubactions&logoColor=white)
-![GitLab CI](https://img.shields.io/badge/GitLab_CI-FC6D26?style=flat-square&logo=gitlab&logoColor=white)
-![Jenkins](https://img.shields.io/badge/Jenkins-D24939?style=flat-square&logo=jenkins&logoColor=white)
-
-**Languages**
-
-![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
-![Bash](https://img.shields.io/badge/Bash-4EAA25?style=flat-square&logo=gnubash&logoColor=white)
-![Go](https://img.shields.io/badge/Go-00ADD8?style=flat-square&logo=go&logoColor=white)
-![YAML](https://img.shields.io/badge/YAML-CB171E?style=flat-square&logo=yaml&logoColor=white)
 
 ---
 
@@ -80,56 +49,122 @@ pipelines_shipped: 400+
 
 <div align="center">
 
-| metric | value | target |
+| metric | value | impact |
 |--------|-------|--------|
-| 🟢 availability | **99.97%** | 99.9% |
-| ⚡ MTTR | **< 4 min** | < 15 min |
-| 🚀 deploy frequency | **12x / week** | daily |
-| 🔁 pipelines shipped | **400+** | — |
-| 🔥 incidents → runbooks | **100%** | 100% |
+| 🟢 system availability | **99.97%** | AppleCare + product launches |
+| ⚡ peak throughput | **20,000+ TPS** | Apple Cloud + AWS |
+| 🔥 cert-related incidents | **↓ 95%** | automated renewals + alerting |
+| 🚀 release rollout time | **↓ 30%** | ChatOps deployments |
+| 📦 service interruptions | **↓ 25%** | zero-downtime K8s migration |
+| 💸 infra cost reduction | **↓ 55%** | monolith → microservices (JPMC) |
+| ⏱ deployment time (JPMC) | **3 hrs → 20 min** | parallel CI/CD pipelines |
+| ⏱ deployment time (ADP) | **55 min → 18 min** | Jenkins + CloudFormation |
+| 👥 team led | **11 SREs** | global, Apple |
 
 </div>
 
 ---
 
-## `$ ls -la ./projects`
+## `$ kubectl get stack --all-namespaces`
 
-### ⚙ [k8s-autoscaler-policy](https://github.com/yourusername/k8s-autoscaler-policy)
-> Custom HPA + KEDA rules that **cut cloud spend by 38%** during off-peak hours
+**Cloud & Orchestration**
+
+![Kubernetes](https://img.shields.io/badge/Kubernetes-326CE5?style=flat-square&logo=kubernetes&logoColor=white)
+![AWS](https://img.shields.io/badge/AWS-232F3E?style=flat-square&logo=amazonaws&logoColor=white)
+![GCP](https://img.shields.io/badge/GCP-4285F4?style=flat-square&logo=googlecloud&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white)
+![Helm](https://img.shields.io/badge/Helm-0F1689?style=flat-square&logo=helm&logoColor=white)
+
+**Infrastructure as Code**
+
+![Terraform](https://img.shields.io/badge/Terraform-7B42BC?style=flat-square&logo=terraform&logoColor=white)
+![Ansible](https://img.shields.io/badge/Ansible-EE0000?style=flat-square&logo=ansible&logoColor=white)
+![Kustomize](https://img.shields.io/badge/Kustomize-326CE5?style=flat-square&logo=kubernetes&logoColor=white)
+
+**CI/CD**
+
+![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=flat-square&logo=githubactions&logoColor=white)
+![Jenkins](https://img.shields.io/badge/Jenkins-D24939?style=flat-square&logo=jenkins&logoColor=white)
+![Spinnaker](https://img.shields.io/badge/Spinnaker-139BB4?style=flat-square&logo=spinnaker&logoColor=white)
+![GitLab CI](https://img.shields.io/badge/GitLab_CI-FC6D26?style=flat-square&logo=gitlab&logoColor=white)
+
+**Observability**
+
+![Splunk](https://img.shields.io/badge/Splunk-000000?style=flat-square&logo=splunk&logoColor=white)
+![Grafana](https://img.shields.io/badge/Grafana-F46800?style=flat-square&logo=grafana&logoColor=white)
+![Datadog](https://img.shields.io/badge/Datadog-632CA6?style=flat-square&logo=datadog&logoColor=white)
+![Prometheus](https://img.shields.io/badge/Prometheus-E6522C?style=flat-square&logo=prometheus&logoColor=white)
+
+**Languages**
+
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
+![Bash](https://img.shields.io/badge/Bash-4EAA25?style=flat-square&logo=gnubash&logoColor=white)
+![Groovy](https://img.shields.io/badge/Groovy-4298B8?style=flat-square&logo=apachegroovy&logoColor=white)
+![Java](https://img.shields.io/badge/Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white)
+
+**GenAI & MCP**
+
+![LLM](https://img.shields.io/badge/LLM_Inference-Infrastructure-bc8cff?style=flat-square)
+![MCP](https://img.shields.io/badge/MCP-Agent_Integrations-39d353?style=flat-square)
+![GenAI](https://img.shields.io/badge/GenAI-SRE_Automation-79c0ff?style=flat-square)
+
+---
+
+## `$ ls -la ./highlights`
+
+### 🤖 LLM Inference & AI-Powered Incident Triage — Apple
+> Architected LLM inference infra and MCP-integrated AI agents to automate incident triage across Splunk, Grafana, Kubernetes, and Ansible
 
 ```bash
-$ kubectl apply -f autoscaler-policy.yaml
-# → scaled 47 deployments · saved $2,400/mo
+$ agent --trigger incident --sources splunk,grafana,k8s,ansible
+# → root cause identified · runbook generated · MTTR ↓ significantly
+# → part of company-wide GenAI SRE initiative
+```
+![LLM](https://img.shields.io/badge/-LLM_Infra-bc8cff?style=flat-square)
+![MCP](https://img.shields.io/badge/-MCP-39d353?style=flat-square)
+![Ansible](https://img.shields.io/badge/-Ansible-EE0000?style=flat-square&logo=ansible&logoColor=white)
+
+---
+
+### ⚙ ChatOps Deployments — Apple
+> Designed Slack + Ansible + AWS pipeline deployments — rollout time **↓ 30%**, full release visibility
+
+```bash
+$ slack trigger deploy --env prod --app applecare
+# → pipeline triggered · approvals collected · rollout complete
+# → 30% faster than previous release process
+```
+![Slack](https://img.shields.io/badge/-Slack-4A154B?style=flat-square&logo=slack&logoColor=white)
+![Ansible](https://img.shields.io/badge/-Ansible-EE0000?style=flat-square&logo=ansible&logoColor=white)
+![AWS](https://img.shields.io/badge/-AWS-232F3E?style=flat-square&logo=amazonaws&logoColor=white)
+
+---
+
+### ◈ Petabyte-Scale K8s Migration — Apple
+> Led end-to-end migration of petabyte-scale customer feedback service to Kubernetes — **↓ 25% service interruptions**
+
+```bash
+$ kubectl apply -f customer-feedback-migration.yaml
+# → namespace relocated · GSLB/DNS configured
+# → zero downtime · 25% fewer service interruptions
 ```
 ![Kubernetes](https://img.shields.io/badge/-Kubernetes-326CE5?style=flat-square&logo=kubernetes&logoColor=white)
-![Python](https://img.shields.io/badge/-Python-3776AB?style=flat-square&logo=python&logoColor=white)
-![cost-opt](https://img.shields.io/badge/-cost--opt-39d353?style=flat-square)
+![HDFS](https://img.shields.io/badge/-HDFS-FF6B00?style=flat-square)
+![big-data](https://img.shields.io/badge/-500TB_data-79c0ff?style=flat-square)
 
 ---
 
-### ◈ [terraform-platform-modules](https://github.com/yourusername/terraform-platform-modules)
-> Opinionated IaC modules — VPC, EKS, RDS — **zero-to-prod in 12 minutes**
+### ◉ Microservices Migration — J.P. Morgan Chase
+> Monolith → microservices on Kubernetes — **↓ 55% operational cost**, **3 hrs → 20 min deployments**, **25 → 0 outages/month**
 
 ```bash
-$ terraform apply -target=module.platform
-# → 47 resources created · 0 errors · 12m 03s
+$ jenkins run pipeline --parallel --env prod
+# → 9 services deployed in parallel · 0 downtime · cost ↓ 55%
+# → P0/P1 incidents: authored RCA · presented to executives
 ```
-![Terraform](https://img.shields.io/badge/-Terraform-7B42BC?style=flat-square&logo=terraform&logoColor=white)
-![AWS](https://img.shields.io/badge/-AWS-232F3E?style=flat-square&logo=amazonaws&logoColor=white)
-![modules](https://img.shields.io/badge/-modules-79c0ff?style=flat-square)
-
----
-
-### ◉ [chaos-runbook-bot](https://github.com/yourusername/chaos-runbook-bot)
-> Slack bot that **auto-generates runbooks** from past incidents using LLMs + PagerDuty data
-
-```bash
-$ python bot.py --incident INC-4821
-# → runbook generated · 3 similar incidents found · MTTR ↓ 40%
-```
-![Python](https://img.shields.io/badge/-Python-3776AB?style=flat-square&logo=python&logoColor=white)
-![Slack](https://img.shields.io/badge/-Slack-4A154B?style=flat-square&logo=slack&logoColor=white)
-![LLM](https://img.shields.io/badge/-LLM-bc8cff?style=flat-square)
+![Kubernetes](https://img.shields.io/badge/-Kubernetes-326CE5?style=flat-square&logo=kubernetes&logoColor=white)
+![Jenkins](https://img.shields.io/badge/-Jenkins-D24939?style=flat-square&logo=jenkins&logoColor=white)
+![Kafka](https://img.shields.io/badge/-Kafka-231F20?style=flat-square&logo=apachekafka&logoColor=white)
 
 ---
 
@@ -147,19 +182,32 @@ $ python bot.py --incident INC-4821
 
 ---
 
+## `$ cat certifications.txt`
+
+![CKS](https://img.shields.io/badge/CKA-Certified_Kubernetes_Security_Specialist-326CE5?style=flat-square&logo=kubernetes&logoColor=white)
+![CKA](https://img.shields.io/badge/CKA-Certified_Kubernetes_Administrator-326CE5?style=flat-square&logo=kubernetes&logoColor=white)
+![CKAD](https://img.shields.io/badge/CKAD-Certified_Kubernetes_Developer-326CE5?style=flat-square&logo=kubernetes&logoColor=white)
+![AWS](https://img.shields.io/badge/AWS-Solutions_Architect-FF9900?style=flat-square&logo=amazonaws&logoColor=white)
+![Terraform](https://img.shields.io/badge/Terraform-Associate_Developer-7B42BC?style=flat-square&logo=terraform&logoColor=white)
+![GCP](https://img.shields.io/badge/GCP-Cloud_Engineer-4285F4?style=flat-square&logo=googlecloud&logoColor=white)
+
+---
+
 ## `$ cat /etc/motd`
 
 ```
-╔─────────────────────────────────────────────────────────────╗
-│                                                             │
-│   "The best on-call rotation is the one you never need."   │
-│                                                             │
-│   → automate the toil                                      │
-│   → instrument everything                                   │
-│   → write the runbook before the incident                  │
-│   → blameless post-mortems, always                         │
-│                                                             │
-╚─────────────────────────────────────────────────────────────╝
+╔──────────────────────────────────────────────────────────────────╗
+│                                                                  │
+│   🏆 "Best Infrastructure" — Google Cloud                       │
+│      highly secure, highly available large-scale infra           │
+│                                                                  │
+│   ⭐ "Star Performer of the Month" — Quantiphi Analytics        │
+│      leading and delivering a cost-efficient project             │
+│                                                                  │
+│   → automate the toil        → instrument everything             │
+│   → write the runbook first  → blameless post-mortems, always   │
+│                                                                  │
+╚──────────────────────────────────────────────────────────────────╝
 ```
 
 ---
@@ -169,14 +217,13 @@ $ python bot.py --incident INC-4821
 <div align="center">
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/yourusername)
-[![Blog](https://img.shields.io/badge/Blog-39d353?style=for-the-badge&logo=hashnode&logoColor=white)](https://yourblog.dev)
 [![Email](https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:you@email.com)
 [![Resume](https://img.shields.io/badge/Resume-79c0ff?style=for-the-badge&logo=adobeacrobatreader&logoColor=white)](https://yourresume.dev)
 
-*open to SRE · platform engineering · infrastructure · DevOps roles*
+*open to SRE · platform engineering · infrastructure · DevOps · GenAI infra roles*
 
 ![Visitor Count](https://komarev.com/ghpvc/?username=yourusername&color=39d353&style=flat-square&label=profile+views)
 
 </div>
 
-[![capsule-footer](https://capsule-render.vercel.app/api?type=waving&color=0d1117&customColorList=0,2,2,5,30&height=100&section=footer&fontColor=39d353)](https://github.com/yourusername)
+[![footer](https://capsule-render.vercel.app/api?type=waving&color=0d1117&customColorList=0,2,2,5,30&height=100&section=footer)](https://github.com/yourusername)
