@@ -180,8 +180,8 @@ $ jenkins run pipeline --parallel --env prod
 
 <div align="center">
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/yourusername)
-[![Email](https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:you@email.com)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/prakshal-doshi)
+[![Email](https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:doshi0709@gmail.com)
 [![Resume](https://img.shields.io/badge/Resume-79c0ff?style=for-the-badge&logo=adobeacrobatreader&logoColor=white)](https://yourresume.dev)
 
 *open to SRE · platform engineering · infrastructure · DevOps · GenAI infra roles*
