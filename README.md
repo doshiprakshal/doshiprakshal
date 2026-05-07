@@ -5,42 +5,7 @@
 
 <br/>
 
-![Apple](https://img.shields.io/badge/Apple-SRE-f0f6fc?style=flat-square&logo=apple&logoColor=white)
-![status](https://img.shields.io/badge/status-systems_nominal-39d353?style=flat-square)
-![uptime](https://img.shields.io/badge/uptime-99.97%25-39d353?style=flat-square)
-![tps](https://img.shields.io/badge/workload-20K+_TPS-79c0ff?style=flat-square)
-![open](https://img.shields.io/badge/open_to-SRE_%2F_Platform_%2F_Infra-bc8cff?style=flat-square)
-
 </div>
-
----
-
-## `$ cat about.yaml`
-
-```yaml
-name:       Prakshal Doshi
-role:       Site Reliability Engineer
-company:    Apple
-location:   United States
-
-team_size:  11 SREs (global team lead)
-workload:   20,000+ TPS across AppleCare + new product launches
-
-focus:
-  - LLM inference infrastructure & AI-powered agents (MCP)
-  - Multi-region active-active deployments
-  - ChatOps-based deployments (Slack + Ansible + AWS)
-  - Cloud cost optimization & failover validation
-  - GenAI initiatives across SRE
-
-philosophy: "toil is a bug · automate or die"
-
-education:
-  degree:   MS Computer Science
-  school:   San Diego State University
-  gpa:      3.71 / 4.0
-  year:     2023
-```
 
 ---
 
