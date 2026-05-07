@@ -187,7 +187,7 @@
 
   <!-- L19 -->
   <text x="36" y="414" font-family="'Courier New',monospace" font-size="12">
-    <tspan fill="#79c0ff">metrics</tspan><tspan fill="#f0f6fc">:</tspan>
+    <tspan fill="#79c0ff">education</tspan><tspan fill="#f0f6fc">:</tspan>
   </text>
   <rect x="36" y="399" width="728" height="18" fill="#161b22">
     <animate attributeName="width" from="728" to="0" dur="0.01s" begin="2.72s" fill="freeze"/>
@@ -195,7 +195,7 @@
 
   <!-- L20 -->
   <text x="36" y="433" font-family="'Courier New',monospace" font-size="12">
-    <tspan fill="#6e7681">  mttr:            </tspan><tspan fill="#39d353">"&lt; 4 min"</tspan>
+    <tspan fill="#6e7681">  degree:            </tspan><tspan fill="#39d353">"MS Computer Science"</tspan>
   </text>
   <rect x="36" y="418" width="728" height="18" fill="#161b22">
     <animate attributeName="width" from="728" to="0" dur="0.01s" begin="2.85s" fill="freeze"/>
@@ -203,7 +203,7 @@
 
   <!-- L21 -->
   <text x="36" y="452" font-family="'Courier New',monospace" font-size="12">
-    <tspan fill="#6e7681">  availability:     </tspan><tspan fill="#39d353">"99.97%"</tspan>
+    <tspan fill="#6e7681">  school:     </tspan><tspan fill="#39d353">"San Diego State University"</tspan>
   </text>
   <rect x="36" y="437" width="728" height="18" fill="#161b22">
     <animate attributeName="width" from="728" to="0" dur="0.01s" begin="2.98s" fill="freeze"/>
@@ -211,7 +211,7 @@
 
   <!-- L22 -->
   <text x="36" y="471" font-family="'Courier New',monospace" font-size="12">
-    <tspan fill="#6e7681">  cert_incidents:   </tspan><tspan fill="#39d353">"↓ 95%"</tspan>
+    <tspan fill="#6e7681">  gpa:   </tspan><tspan fill="#39d353">"3.71 / 4.0"</tspan>
   </text>
   <rect x="36" y="456" width="728" height="18" fill="#161b22">
     <animate attributeName="width" from="728" to="0" dur="0.01s" begin="3.11s" fill="freeze"/>
@@ -219,7 +219,7 @@
 
   <!-- L23 -->
   <text x="36" y="490" font-family="'Courier New',monospace" font-size="12">
-    <tspan fill="#6e7681">  rollout_time:     </tspan><tspan fill="#39d353">"↓ 30%"</tspan><tspan fill="#6e7681">  # ChatOps</tspan>
+    <tspan fill="#6e7681">  year:     </tspan><tspan fill="#39d353">"2023"</tspan><tspan fill="#6e7681"></tspan>
   </text>
   <rect x="36" y="475" width="728" height="18" fill="#161b22">
     <animate attributeName="width" from="728" to="0" dur="0.01s" begin="3.24s" fill="freeze"/>
