@@ -1,7 +1,7 @@
 <div align="center">
 
 ![header](./header1.svg)
-![terminal](./terminal.svg)
+![terminal](./terminal1.svg)
 
 <br/>
 
