@@ -1,0 +1,2023 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prakshal Doshi — Site Reliability Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #0A1628;
+      --navy-light: #0f1f3d;
+      --blue: #2563EB;
+      --blue-light: #3b7af7;
+      --white: #ffffff;
+      --off-white: #f8f9fc;
+      --gray-100: #f1f4f9;
+      --gray-200: #e2e8f0;
+      --gray-400: #94a3b8;
+      --gray-600: #475569;
+      --gray-800: #1e293b;
+      --serif: 'Cormorant Garamond', Georgia, serif;
+      --sans: 'Inter', -apple-system, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--sans);
+      color: var(--gray-800);
+      background: var(--white);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      background: rgba(10, 22, 40, 0.97);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      padding: 0 2rem;
+      height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      font-family: var(--serif);
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--white);
+      text-decoration: none;
+      letter-spacing: 0.02em;
+    }
+
+    .nav-logo span { color: var(--blue); }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: rgba(255,255,255,0.78);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--white); }
+
+    .btn-hire {
+      background: var(--blue);
+      color: var(--white) !important;
+      padding: 0.5rem 1.25rem;
+      border-radius: 4px;
+      font-weight: 600 !important;
+      transition: background 0.2s !important;
+    }
+
+    .btn-hire:hover { background: var(--blue-light) !important; }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 4px;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--white);
+      transition: all 0.3s;
+    }
+
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 68px; left: 0; right: 0;
+      background: var(--navy);
+      padding: 1.5rem 2rem;
+      z-index: 999;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .mobile-menu.open { display: block; }
+
+    .mobile-menu ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .mobile-menu a {
+      color: rgba(255,255,255,0.85);
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+
+    /* ── HERO ── */
+    #hero {
+      background: var(--navy);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 120px 2rem 80px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    #hero::before {
+      content: '';
+      position: absolute;
+      top: -200px; right: -200px;
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(37,99,235,0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .hero-eyebrow {
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: 1rem;
+    }
+
+    .hero-name {
+      font-family: var(--serif);
+      font-size: clamp(2.8rem, 6vw, 5rem);
+      font-weight: 900;
+      color: var(--white);
+      line-height: 1.1;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-title {
+      font-family: var(--serif);
+      font-size: clamp(1.1rem, 2.5vw, 1.6rem);
+      font-weight: 400;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-tagline {
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.5);
+      max-width: 560px;
+      margin-bottom: 2.5rem;
+      line-height: 1.7;
+    }
+
+    .hero-ctas {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 4rem;
+    }
+
+    .btn-primary {
+      background: var(--blue);
+      color: var(--white);
+      padding: 0.85rem 2rem;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      letter-spacing: 0.02em;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .btn-primary:hover { background: var(--blue-light); transform: translateY(-1px); }
+
+    .btn-outline {
+      border: 1px solid rgba(255,255,255,0.3);
+      color: var(--white);
+      padding: 0.85rem 2rem;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.9rem;
+      transition: border-color 0.2s, background 0.2s;
+    }
+
+    .btn-outline:hover { border-color: rgba(255,255,255,0.7); background: rgba(255,255,255,0.05); }
+
+    /* Tech scroll strip */
+    .tech-strip-wrapper {
+      overflow: hidden;
+      mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+      -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    }
+
+    .tech-strip {
+      display: flex;
+      gap: 2.5rem;
+      animation: scroll-left 30s linear infinite;
+      width: max-content;
+    }
+
+    .tech-strip:hover { animation-play-state: paused; }
+
+    @keyframes scroll-left {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
+    .tech-badge {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: rgba(255,255,255,0.45);
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .tech-badge svg { width: 18px; height: 18px; opacity: 0.6; }
+
+    /* ── SECTIONS COMMON ── */
+    section { padding: 100px 2rem; }
+
+    .section-inner { max-width: 1080px; margin: 0 auto; }
+
+    .section-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: 0.75rem;
+    }
+
+    .section-title {
+      font-family: var(--serif);
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+
+    .section-subtitle {
+      font-size: 1rem;
+      color: var(--gray-600);
+      max-width: 600px;
+      line-height: 1.7;
+      margin-bottom: 3.5rem;
+    }
+
+    /* ── ABOUT ── */
+    #about { background: var(--white); }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 340px 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    .about-photo {
+      aspect-ratio: 3/4;
+      background: var(--gray-100);
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      border: 1px solid var(--gray-200);
+      position: relative;
+    }
+
+    .photo-placeholder {
+      text-align: center;
+      color: var(--gray-400);
+    }
+
+    .photo-placeholder svg { width: 64px; height: 64px; margin-bottom: 0.75rem; display: block; margin-left: auto; margin-right: auto; }
+    .photo-placeholder p { font-size: 0.85rem; }
+
+    .about-bio {
+      font-size: 1.05rem;
+      color: var(--gray-600);
+      line-height: 1.8;
+      margin-bottom: 2rem;
+    }
+
+    .about-bio strong { color: var(--navy); }
+
+    .about-highlights {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+      margin-top: 2.5rem;
+    }
+
+    .highlight-card {
+      background: var(--gray-100);
+      border-radius: 6px;
+      padding: 1.5rem;
+      text-align: center;
+      border: 1px solid var(--gray-200);
+    }
+
+    .highlight-card .icon {
+      width: 44px; height: 44px;
+      background: var(--navy);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 0.75rem;
+    }
+
+    .highlight-card .icon svg { width: 22px; height: 22px; color: var(--white); }
+
+    .highlight-card h3 {
+      font-family: var(--serif);
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 0.25rem;
+    }
+
+    .highlight-card p { font-size: 0.8rem; color: var(--gray-600); }
+
+    /* ── SKILLS ── */
+    #skills { background: var(--off-white); }
+
+    .skills-group { margin-bottom: 3rem; }
+
+    .skills-group-title {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gray-400);
+      margin-bottom: 1.25rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--gray-200);
+    }
+
+    .skills-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .skill-chip {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: 4px;
+      padding: 0.5rem 1rem;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--navy);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .skill-chip:hover {
+      border-color: var(--blue);
+      box-shadow: 0 0 0 3px rgba(37,99,235,0.08);
+    }
+
+    .skill-dot {
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: var(--blue);
+    }
+
+    /* ── EXPERIENCE ── */
+    #experience { background: var(--white); }
+
+    .timeline { position: relative; padding-left: 2rem; }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 6px;
+      width: 1px;
+      height: calc(100% - 6px);
+      background: var(--gray-200);
+    }
+
+    .timeline-item {
+      position: relative;
+      padding-bottom: 3.5rem;
+    }
+
+    .timeline-item:last-child { padding-bottom: 0; }
+
+    .timeline-dot {
+      position: absolute;
+      left: -2rem;
+      top: 6px;
+      width: 12px; height: 12px;
+      border-radius: 50%;
+      background: var(--blue);
+      border: 2px solid var(--white);
+      box-shadow: 0 0 0 2px var(--blue);
+      margin-left: -5.5px;
+    }
+
+    .timeline-meta {
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: 0.4rem;
+    }
+
+    .timeline-role {
+      font-family: var(--serif);
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 0.25rem;
+    }
+
+    .timeline-company {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--gray-600);
+      margin-bottom: 1rem;
+    }
+
+    .timeline-bullets {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .timeline-bullets li {
+      font-size: 0.92rem;
+      color: var(--gray-600);
+      padding-left: 1.25rem;
+      position: relative;
+      line-height: 1.6;
+    }
+
+    .timeline-bullets li::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 0.55em;
+      width: 5px; height: 5px;
+      border-radius: 50%;
+      background: var(--blue);
+    }
+
+    /* ── PROJECTS ── */
+    #projects { background: var(--off-white); }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .project-card {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: 8px;
+      padding: 1.75rem;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+    }
+
+    .project-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(10,22,40,0.1);
+      border-color: var(--blue);
+    }
+
+    .project-card h3 {
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 0.6rem;
+    }
+
+    .project-card p {
+      font-size: 0.88rem;
+      color: var(--gray-600);
+      line-height: 1.65;
+      flex: 1;
+      margin-bottom: 1.25rem;
+    }
+
+    .tech-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .tech-tag {
+      background: var(--navy);
+      color: rgba(255,255,255,0.85);
+      font-size: 0.7rem;
+      font-weight: 600;
+      padding: 0.25rem 0.6rem;
+      border-radius: 3px;
+      letter-spacing: 0.03em;
+    }
+
+    .project-links {
+      display: flex;
+      gap: 0.6rem;
+    }
+
+    .project-link {
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 0.4rem 0.9rem;
+      border-radius: 4px;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+
+    .project-link.primary {
+      background: var(--blue);
+      color: var(--white);
+    }
+
+    .project-link.primary:hover { background: var(--blue-light); }
+
+    .project-link.ghost {
+      border: 1px solid var(--gray-200);
+      color: var(--navy);
+    }
+
+    .project-link.ghost:hover { border-color: var(--navy); }
+
+    /* ── PUBLICATIONS ── */
+    #publications { background: var(--white); }
+
+    .pub-group { margin-bottom: 2.5rem; }
+
+    .pub-group-title {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gray-400);
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--gray-200);
+    }
+
+    .pub-item {
+      padding: 1.25rem 0;
+      border-bottom: 1px solid var(--gray-100);
+      display: flex;
+      gap: 1.5rem;
+      align-items: flex-start;
+    }
+
+    .pub-badge {
+      flex-shrink: 0;
+      background: var(--navy);
+      color: var(--white);
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      padding: 0.3rem 0.6rem;
+      border-radius: 3px;
+      text-transform: uppercase;
+      margin-top: 2px;
+    }
+
+    .pub-content h4 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 0.3rem;
+      line-height: 1.4;
+    }
+
+    .pub-content p {
+      font-size: 0.82rem;
+      color: var(--gray-600);
+    }
+
+    .pub-content a {
+      font-size: 0.82rem;
+      color: var(--blue);
+      text-decoration: none;
+    }
+
+    .pub-content a:hover { text-decoration: underline; }
+
+    /* ── JUDGING ── */
+    #judging { background: var(--off-white); }
+
+    .judging-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+
+    .judging-block {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: 8px;
+      padding: 1.75rem;
+    }
+
+    .judging-block h3 {
+      font-family: var(--serif);
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 1.25rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid var(--gray-200);
+    }
+
+    .judging-list { list-style: none; }
+
+    .judging-list li {
+      padding: 0.5rem 0;
+      border-bottom: 1px solid var(--gray-100);
+      font-size: 0.87rem;
+      color: var(--gray-600);
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+      line-height: 1.5;
+    }
+
+    .judging-list li:last-child { border-bottom: none; }
+
+    .judging-list li::before {
+      content: '→';
+      color: var(--blue);
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .judging-list a {
+      color: var(--blue);
+      text-decoration: none;
+      font-size: 0.82rem;
+    }
+
+    .judging-list a:hover { text-decoration: underline; }
+
+    .level-tag {
+      display: inline-block;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 0.15rem 0.5rem;
+      border-radius: 3px;
+      margin-left: 0.4rem;
+      vertical-align: middle;
+    }
+
+    .level-tag.global { background: rgba(37,99,235,0.12); color: var(--blue); }
+    .level-tag.national { background: rgba(10,22,40,0.08); color: var(--navy); }
+    .level-tag.state { background: rgba(22,163,74,0.1); color: #16a34a; }
+
+    /* ── SPEAKING ── */
+    #speaking { background: var(--white); }
+
+    .speaking-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+
+    .speaking-card {
+      border: 1px solid var(--gray-200);
+      border-radius: 8px;
+      padding: 1.5rem;
+      display: flex;
+      gap: 1.25rem;
+      align-items: flex-start;
+      transition: border-color 0.2s;
+    }
+
+    .speaking-card:hover { border-color: var(--blue); }
+
+    .speaking-icon {
+      width: 44px; height: 44px;
+      background: var(--navy);
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .speaking-icon svg { width: 22px; height: 22px; color: var(--white); }
+
+    .speaking-card h4 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 0.3rem;
+    }
+
+    .speaking-card p {
+      font-size: 0.83rem;
+      color: var(--gray-600);
+      line-height: 1.55;
+    }
+
+    /* ── AWARDS ── */
+    #awards { background: var(--off-white); }
+
+    .awards-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+    }
+
+    .award-card {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: 8px;
+      padding: 1.5rem;
+      text-align: center;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .award-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 30px rgba(10,22,40,0.08);
+    }
+
+    .award-icon {
+      width: 52px; height: 52px;
+      background: var(--navy);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1rem;
+    }
+
+    .award-icon svg { width: 26px; height: 26px; color: #f59e0b; }
+
+    .award-card h4 {
+      font-family: var(--serif);
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 0.4rem;
+    }
+
+    .award-card p { font-size: 0.82rem; color: var(--gray-600); line-height: 1.55; }
+
+    /* ── MEMBERSHIPS ── */
+    #memberships { background: var(--white); }
+
+    .memberships-list { list-style: none; display: flex; flex-direction: column; gap: 1rem; }
+
+    .memberships-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      padding: 1rem 1.25rem;
+      border: 1px solid var(--gray-200);
+      border-radius: 6px;
+      font-size: 0.9rem;
+      color: var(--gray-600);
+      line-height: 1.55;
+    }
+
+    .memberships-list li strong { color: var(--navy); display: block; margin-bottom: 0.2rem; }
+
+    .mem-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--blue);
+      flex-shrink: 0;
+      margin-top: 6px;
+    }
+
+    /* ── TESTIMONIALS ── */
+    #testimonials { background: var(--navy); padding: 100px 2rem; }
+
+    #testimonials .section-title { color: var(--white); }
+    #testimonials .section-label { color: rgba(255,255,255,0.5); }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .testimonial-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 8px;
+      padding: 2rem;
+      position: relative;
+    }
+
+    .testimonial-card::before {
+      content: '"';
+      position: absolute;
+      top: 1rem; left: 1.5rem;
+      font-family: var(--serif);
+      font-size: 5rem;
+      color: var(--blue);
+      opacity: 0.3;
+      line-height: 1;
+    }
+
+    .testimonial-text {
+      font-size: 0.92rem;
+      color: rgba(255,255,255,0.75);
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+      padding-top: 1.5rem;
+    }
+
+    .testimonial-author { display: flex; align-items: center; gap: 0.75rem; }
+
+    .author-avatar {
+      width: 42px; height: 42px;
+      border-radius: 50%;
+      background: var(--blue);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--serif);
+      font-weight: 700;
+      color: var(--white);
+      font-size: 0.95rem;
+    }
+
+    .author-name {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--white);
+    }
+
+    .author-title { font-size: 0.78rem; color: rgba(255,255,255,0.5); }
+
+    /* ── CONTACT ── */
+    #contact { background: var(--white); text-align: center; }
+
+    .contact-inner { max-width: 560px; margin: 0 auto; }
+
+    .contact-email {
+      display: inline-block;
+      font-size: 1.3rem;
+      font-weight: 700;
+      font-family: var(--serif);
+      color: var(--navy);
+      text-decoration: none;
+      border-bottom: 2px solid var(--blue);
+      padding-bottom: 2px;
+      margin-bottom: 2.5rem;
+      transition: color 0.2s;
+    }
+
+    .contact-email:hover { color: var(--blue); }
+
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 1.25rem;
+    }
+
+    .social-icon {
+      width: 44px; height: 44px;
+      border: 1px solid var(--gray-200);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      color: var(--navy);
+      transition: border-color 0.2s, background 0.2s, color 0.2s;
+    }
+
+    .social-icon:hover {
+      border-color: var(--blue);
+      background: var(--blue);
+      color: var(--white);
+    }
+
+    .social-icon svg { width: 18px; height: 18px; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--navy);
+      color: rgba(255,255,255,0.5);
+      padding: 2.5rem 2rem;
+    }
+
+    .footer-inner {
+      max-width: 1080px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .footer-name {
+      font-family: var(--serif);
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--white);
+    }
+
+    .footer-copy { font-size: 0.82rem; }
+
+    .footer-links {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+    }
+
+    .footer-links a {
+      color: rgba(255,255,255,0.45);
+      text-decoration: none;
+      font-size: 0.8rem;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: var(--white); }
+
+    /* ── SCROLL ANIMATIONS ── */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1024px) {
+      .projects-grid { grid-template-columns: repeat(2, 1fr); }
+      .testimonials-grid { grid-template-columns: 1fr 1fr; }
+      .awards-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      section { padding: 70px 1.25rem; }
+      .about-grid { grid-template-columns: 1fr; }
+      .about-photo { aspect-ratio: 1/1; max-width: 280px; }
+      .about-highlights { grid-template-columns: 1fr; }
+      .projects-grid { grid-template-columns: 1fr; }
+      .judging-grid { grid-template-columns: 1fr; }
+      .speaking-grid { grid-template-columns: 1fr; }
+      .awards-grid { grid-template-columns: 1fr; }
+      .testimonials-grid { grid-template-columns: 1fr; }
+      .footer-inner { flex-direction: column; text-align: center; }
+      .footer-links { flex-wrap: wrap; justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── NAVIGATION ── -->
+<nav id="main-nav">
+  <a href="#hero" class="nav-logo">Prakshal<span>.</span></a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#publications">Publications</a></li>
+    <li><a href="#judging">Judging</a></li>
+    <li><a href="#speaking">Speaking</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="mailto:doshiprakshal5@gmail.com" class="btn-hire">Hire Me</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="mobile-menu" id="mobile-menu">
+  <ul>
+    <li><a href="#about" class="nav-close">About</a></li>
+    <li><a href="#skills" class="nav-close">Skills</a></li>
+    <li><a href="#experience" class="nav-close">Experience</a></li>
+    <li><a href="#education" class="nav-close">Education</a></li>
+    <li><a href="#projects" class="nav-close">Projects</a></li>
+    <li><a href="#publications" class="nav-close">Publications</a></li>
+    <li><a href="#judging" class="nav-close">Judging</a></li>
+    <li><a href="#speaking" class="nav-close">Speaking</a></li>
+    <li><a href="#contact" class="nav-close">Contact</a></li>
+    <li><a href="mailto:doshiprakshal5@gmail.com">Hire Me</a></li>
+  </ul>
+</div>
+
+<!-- ── HERO ── -->
+<section id="hero">
+  <div class="hero-inner">
+    <p class="hero-eyebrow">Site Reliability Engineer · Apple</p>
+    <h1 class="hero-name">Prakshal Doshi</h1>
+    <p class="hero-title">Site Reliability Engineer · Apple · MS Computer Science, SDSU</p>
+    <p class="hero-tagline">Leading global SRE operations at Apple — architecting LLM-powered agents, driving GenAI adoption across DevOps workflows, and keeping production systems running at 20,000+ TPS.</p>
+    <div class="hero-ctas">
+      <a href="#projects" class="btn-primary">View My Work</a>
+      <a href="#contact" class="btn-outline">Get In Touch</a>
+    </div>
+
+    <!-- Tech scroll strip -->
+    <div class="tech-strip-wrapper">
+      <div class="tech-strip" id="tech-strip">
+        <!-- duplicated for seamless loop -->
+        <span class="tech-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          Kubernetes
+        </span>
+        <span class="tech-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg>
+          AWS
+        </span>
+        <span class="tech-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="2"/><path d="M9 9h6M9 15h6"/></svg>
+          GCP
+        </span>
+        <span class="tech-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>
+          Docker
+        </span>
+        <span class="tech-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+          Python
+        </span>
+        <span class="tech-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          Terraform
+        </span>
+        <span class="tech-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72m2.54-15.38c-3.72 4.35-8.94 5.66-16.88 5.85m19.5 1.9c-3.5-.93-6.63-.82-8.94 0-2.58.92-5.01 2.86-7.44 6.32"/></svg>
+          Ansible
+        </span>
+        <span class="tech-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg>
+          Splunk
+        </span>
+        <span class="tech-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18"/></svg>
+          Jenkins
+        </span>
+        <span class="tech-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 100 20 10 10 0 000-20z"/><path d="M12 8v4l3 3"/></svg>
+          GenAI
+        </span>
+        <span class="tech-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+          Prometheus
+        </span>
+        <span class="tech-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+          Grafana
+        </span>
+        <span class="tech-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+          PostgreSQL
+        </span>
+        <span class="tech-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          Linux
+        </span>
+        <!-- duplicate for seamless loop -->
+        <span class="tech-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          Kubernetes
+        </span>
+        <span class="tech-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg>
+          AWS
+        </span>
+        <span class="tech-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="2"/><path d="M9 9h6M9 15h6"/></svg>
+          GCP
+        </span>
+        <span class="tech-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>
+          Docker
+        </span>
+        <span class="tech-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+          Python
+        </span>
+        <span class="tech-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          Terraform
+        </span>
+        <span class="tech-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72m2.54-15.38c-3.72 4.35-8.94 5.66-16.88 5.85m19.5 1.9c-3.5-.93-6.63-.82-8.94 0-2.58.92-5.01 2.86-7.44 6.32"/></svg>
+          Ansible
+        </span>
+        <span class="tech-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg>
+          Splunk
+        </span>
+        <span class="tech-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18"/></svg>
+          Jenkins
+        </span>
+        <span class="tech-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 100 20 10 10 0 000-20z"/><path d="M12 8v4l3 3"/></svg>
+          GenAI
+        </span>
+        <span class="tech-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+          Prometheus
+        </span>
+        <span class="tech-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+          Grafana
+        </span>
+        <span class="tech-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+          PostgreSQL
+        </span>
+        <span class="tech-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          Linux
+        </span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── ABOUT ── -->
+<section id="about">
+  <div class="section-inner">
+    <p class="section-label fade-up">About Me</p>
+    <h2 class="section-title fade-up">Engineering Reliability at Apple Scale</h2>
+    <div class="about-grid">
+      <div class="about-photo fade-up">
+        <div class="photo-placeholder">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/>
+            <circle cx="12" cy="7" r="4"/>
+          </svg>
+          <p>[Add your photo here]</p>
+        </div>
+      </div>
+      <div class="fade-up">
+        <p class="section-label">Bio</p>
+        <h2 class="section-title" style="font-size:1.8rem;margin-bottom:1rem;">Prakshal Doshi</h2>
+        <div class="about-bio">
+          <p><strong>Bio — I will add it later.</strong></p>
+          <br/>
+          <p>Currently a <strong>Site Reliability Engineer at Apple</strong>, leading a global team of 11 SREs managing infrastructure reliability for customer systems — including AppleCare and every new product launch — on Apple Cloud and AWS, supporting workloads exceeding <strong>20,000 TPS</strong>.</p>
+          <br/>
+          <p>Previously at <strong>Autodesk</strong> and <strong>J.P. Morgan Chase</strong>, and earlier as a Cloud &amp; DevOps Engineer at <strong>Quantiphi Analytics</strong>. Holds an <strong>MS in Computer Science from San Diego State University</strong> (GPA 3.71). Certified AWS Solution Architect, GCP Cloud Engineer, CKAD, CKA, and Terraform Associate. Published researcher, IEEE peer reviewer, and ranked among HackerNoon's top AI &amp; ML writers.</p>
+        </div>
+        <div class="about-highlights">
+          <div class="highlight-card">
+            <div class="icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+            </div>
+            <h3>6+ Years</h3>
+            <p>Industry Experience</p>
+          </div>
+          <div class="highlight-card">
+            <div class="icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+            </div>
+            <h3>20K+ TPS</h3>
+            <p>Production Systems Owned</p>
+          </div>
+          <div class="highlight-card">
+            <div class="icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            </div>
+            <h3>3 Papers</h3>
+            <p>Published Researcher</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SKILLS ── -->
+<section id="skills">
+  <div class="section-inner">
+    <p class="section-label fade-up">Technical Skills</p>
+    <h2 class="section-title fade-up">What I Work With</h2>
+    <p class="section-subtitle fade-up">A breadth of tools and platforms built through years of production engineering at scale.</p>
+
+    <div class="skills-group fade-up">
+      <p class="skills-group-title">Cloud &amp; Infrastructure</p>
+      <div class="skills-grid">
+        <span class="skill-chip"><span class="skill-dot"></span>AWS</span>
+        <span class="skill-chip"><span class="skill-dot"></span>Google Cloud Platform (GCP)</span>
+        <span class="skill-chip"><span class="skill-dot"></span>Apple Cloud</span>
+        <span class="skill-chip"><span class="skill-dot"></span>Kubernetes (GKE, EKS)</span>
+        <span class="skill-chip"><span class="skill-dot"></span>Docker</span>
+        <span class="skill-chip"><span class="skill-dot"></span>Terraform</span>
+        <span class="skill-chip"><span class="skill-dot"></span>Ansible</span>
+        <span class="skill-chip"><span class="skill-dot"></span>Helm / Kustomize</span>
+        <span class="skill-chip"><span class="skill-dot"></span>Spinnaker</span>
+        <span class="skill-chip"><span class="skill-dot"></span>TCP/IP · DNS · HTTP</span>
+        <span class="skill-chip"><span class="skill-dot"></span>Zero Downtime Deployments</span>
+      </div>
+    </div>
+
+    <div class="skills-group fade-up">
+      <p class="skills-group-title">SRE &amp; Observability</p>
+      <div class="skills-grid">
+        <span class="skill-chip"><span class="skill-dot"></span>Splunk</span>
+        <span class="skill-chip"><span class="skill-dot"></span>Grafana</span>
+        <span class="skill-chip"><span class="skill-dot"></span>Datadog</span>
+        <span class="skill-chip"><span class="skill-dot"></span>Elasticsearch / Kibana</span>
+        <span class="skill-chip"><span class="skill-dot"></span>GCP Stackdriver</span>
+        <span class="skill-chip"><span class="skill-dot"></span>AWS CloudWatch</span>
+        <span class="skill-chip"><span class="skill-dot"></span>Hubble</span>
+        <span class="skill-chip"><span class="skill-dot"></span>SLO / SLA / Error Budgets</span>
+        <span class="skill-chip"><span class="skill-dot"></span>Incident Management</span>
+      </div>
+    </div>
+
+    <div class="skills-group fade-up">
+      <p class="skills-group-title">CI/CD &amp; DevOps</p>
+      <div class="skills-grid">
+        <span class="skill-chip"><span class="skill-dot"></span>Jenkins (Groovy)</span>
+        <span class="skill-chip"><span class="skill-dot"></span>GitLab CI</span>
+        <span class="skill-chip"><span class="skill-dot"></span>GitHub / Bitbucket</span>
+        <span class="skill-chip"><span class="skill-dot"></span>ChatOps / Slack Automation</span>
+        <span class="skill-chip"><span class="skill-dot"></span>Agile / Jira / Confluence</span>
+      </div>
+    </div>
+
+    <div class="skills-group fade-up">
+      <p class="skills-group-title">AI / ML &amp; Big Data</p>
+      <div class="skills-grid">
+        <span class="skill-chip"><span class="skill-dot"></span>Generative AI · LLM Agents</span>
+        <span class="skill-chip"><span class="skill-dot"></span>MCP Servers</span>
+        <span class="skill-chip"><span class="skill-dot"></span>Spark · Hive · Hadoop</span>
+        <span class="skill-chip"><span class="skill-dot"></span>Trino / Presto</span>
+        <span class="skill-chip"><span class="skill-dot"></span>HDFS / EMR</span>
+        <span class="skill-chip"><span class="skill-dot"></span>Kafka</span>
+        <span class="skill-chip"><span class="skill-dot"></span>NLP / FAISS / UMLS</span>
+      </div>
+    </div>
+
+    <div class="skills-group fade-up">
+      <p class="skills-group-title">Languages &amp; Frameworks</p>
+      <div class="skills-grid">
+        <span class="skill-chip"><span class="skill-dot"></span>Python</span>
+        <span class="skill-chip"><span class="skill-dot"></span>Java</span>
+        <span class="skill-chip"><span class="skill-dot"></span>Groovy</span>
+        <span class="skill-chip"><span class="skill-dot"></span>Bash / Shell</span>
+        <span class="skill-chip"><span class="skill-dot"></span>SQL / MySQL</span>
+        <span class="skill-chip"><span class="skill-dot"></span>HTML · CSS · ReactJS</span>
+        <span class="skill-chip"><span class="skill-dot"></span>Flask</span>
+        <span class="skill-chip"><span class="skill-dot"></span>Linux / Unix</span>
+      </div>
+    </div>
+
+    <div class="skills-group fade-up">
+      <p class="skills-group-title">Certifications</p>
+      <div class="skills-grid">
+        <span class="skill-chip"><span class="skill-dot"></span>AWS Solutions Architect</span>
+        <span class="skill-chip"><span class="skill-dot"></span>GCP Professional Cloud Engineer</span>
+        <span class="skill-chip"><span class="skill-dot"></span>CKA — Certified Kubernetes Administrator</span>
+        <span class="skill-chip"><span class="skill-dot"></span>CKAD — Certified Kubernetes App Developer</span>
+        <span class="skill-chip"><span class="skill-dot"></span>Terraform Associate Developer</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── EXPERIENCE ── -->
+<section id="experience">
+  <div class="section-inner">
+    <p class="section-label fade-up">Work History</p>
+    <h2 class="section-title fade-up">Experience</h2>
+    <p class="section-subtitle fade-up">A track record of delivering reliability, scale, and innovation at industry-leading organizations.</p>
+
+    <div class="timeline">
+
+      <div class="timeline-item fade-up">
+        <div class="timeline-dot"></div>
+        <p class="timeline-meta">May 2025 – Present · United States</p>
+        <h3 class="timeline-role">Site Reliability Engineer — Customer Systems</h3>
+        <p class="timeline-company">Apple · Cloud, Kubernetes, CI/CD, Splunk, Grafana, AWS, Ansible, Spinnaker, GenAI, MCP</p>
+        <ul class="timeline-bullets">
+          <li>Leading a global team of 11 SREs managing infrastructure reliability across Apple Cloud and AWS for customer systems including AppleCare and new product launches, supporting workloads exceeding 20,000 TPS.</li>
+          <li>Architected LLM inference infrastructure and AI-powered agents with MCP integrations to automate incident triage across Splunk, Grafana, Kubernetes, and Ansible, increasing operational efficiency as part of GenAI initiatives across SRE.</li>
+          <li>Designed and implemented ChatOps-based deployments using Slack, Ansible, and AWS pipelines, improving release visibility and reducing rollout time by 30%.</li>
+          <li>Streamlined patching, change renewals, and cluster upgrade processes for 20+ applications, removing operational bottlenecks and improving release consistency.</li>
+          <li>Led migrations from end-of-life stacks (Datadog, Lambda 3.9, Kubernetes versions), ensuring platform stability and compliance.</li>
+          <li>Automated certificate renewals with integrated state management and alerting, cutting cert-related incidents by 95%.</li>
+          <li>Spearheaded company-level reliability initiatives including multi-region active-active deployments, failover validation, and cloud cost optimization programs.</li>
+        </ul>
+      </div>
+
+      <div class="timeline-item fade-up">
+        <div class="timeline-dot"></div>
+        <p class="timeline-meta">Feb 2024 – Apr 2025 · United States</p>
+        <h3 class="timeline-role">Site Reliability Engineer, DevOps (SWE)</h3>
+        <p class="timeline-company">Apple · Cloud, Kubernetes, CI/CD, Jenkins, Bash, Splunk, Grafana, SQL, Big Data, HDFS, Impala</p>
+        <ul class="timeline-bullets">
+          <li>Led the end-to-end migration of a petabyte-scale customer feedback service to highly scalable, reliable Kubernetes infrastructure.</li>
+          <li>Streamlined resource planning and implemented zero-downtime Kubernetes setup including namespace relocation, storage management, and GSLB/DNS configurations, reducing service interruptions by 25%.</li>
+          <li>Managed and configured Horizon, a data access service for transferring data from HDFS to McQueen/Object Store, handling over 500 TB of data as the SME.</li>
+          <li>Developed and deployed a Simcloud environment — Apple's internal macOS batch compute service — by upgrading stable XBS versions, managing key distribution, and automating 2FA through Jenkins jobs.</li>
+          <li>Created a cleanup Bash script with advanced logging, effectively cleaning up 200 instances concurrently, enhancing system efficiency.</li>
+          <li>Provided 24/7 on-call support, maintaining system stability using Hubble and Splunk monitoring with actionable alerting and effective incident response strategies.</li>
+        </ul>
+      </div>
+
+      <div class="timeline-item fade-up">
+        <div class="timeline-dot"></div>
+        <p class="timeline-meta">May 2023 – Jan 2024 · United States</p>
+        <h3 class="timeline-role">Cloud, DevOps &amp; Infrastructure Engineer (Intern)</h3>
+        <p class="timeline-company">Autodesk · AWS, Big Data, Spark, Hive, Presto, Datadog, Terraform, CI/CD, Jenkins, Python</p>
+        <ul class="timeline-bullets">
+          <li>Set up EMR clusters, load balancers, and security groups for Spark, Hive, Hadoop, and Presto using CloudFormation and Jenkins CI/CD, reducing deployment time from 55 minutes to 18 minutes.</li>
+          <li>Developed Trino, Hive, and Spark query scripts in Java to capture session information, query execution, and utilization for operational issues and monthly leadership metrics.</li>
+          <li>Configured Datadog alerts in stage and prod using Terraform to identify and resolve Spark, Hive, and Hadoop cluster performance issues.</li>
+          <li>Automated generation of EMR log files at dynamic S3 locations depending on year, month, and day using a Python Lambda function.</li>
+        </ul>
+      </div>
+
+      <div class="timeline-item fade-up">
+        <div class="timeline-dot"></div>
+        <p class="timeline-meta">Jul 2021 – Jul 2022 · India</p>
+        <h3 class="timeline-role">Software Engineer, DevOps</h3>
+        <p class="timeline-company">J.P. Morgan Chase · Cloud, Kubernetes, CI/CD, Jenkins, Bitbucket, Splunk, Elasticsearch, Python, Terraform</p>
+        <ul class="timeline-bullets">
+          <li>Migrated monolithic application to microservices using distributed architecture on Kubernetes, reducing operational cost by 55%.</li>
+          <li>Developed CI/CD pipelines for parallel deployments of micro-frontend architecture in Groovy (Jenkins) with dynamic provisioning, reducing deployment time from 3 hours to 20 minutes on private cloud platform (Gaia).</li>
+          <li>Containerized applications using Docker and Kubernetes to reduce load and non-availability issues from 25 per month to 0.</li>
+          <li>Led major customer-facing P0/P1 incidents, authored detailed RCA documents, and presented executive-level post-incident reviews to stakeholders.</li>
+          <li>Integrated monitoring and logging using Splunk, Elasticsearch, and Kibana; developed Python scripts to terminate idle resources, reducing cost by 35%.</li>
+        </ul>
+      </div>
+
+      <div class="timeline-item fade-up">
+        <div class="timeline-dot"></div>
+        <p class="timeline-meta">Jul 2019 – Jul 2021 · India</p>
+        <h3 class="timeline-role">Cloud &amp; DevOps Engineer</h3>
+        <p class="timeline-company">Quantiphi Analytics · GCP, AWS, Kubernetes, CI/CD, GitLab, Terraform, Docker, Stackdriver, CloudWatch</p>
+        <ul class="timeline-bullets">
+          <li>Led a team of 6 cloud engineers in the design and deployment of enterprise-wide scalable, highly available, secure, and reliable infrastructure on GCP for 38 microservices — received Google Cloud "Best Infrastructure" award.</li>
+          <li>Configured end-to-end Kubernetes infrastructure on GKE with load balancers and autoscaling strategies, managing 40× more traffic during peak hours with 100% uptime SLA.</li>
+          <li>Created automated CI/CD workflows in GitLab to build and deploy microservices on GKE, reducing deployment time from 1 hour to 17 minutes.</li>
+          <li>Secured infrastructure by configuring networking (TCP/IP, DNS, HTTP) and cloud-native security policies on GCP and AWS.</li>
+          <li>Automated multi-environment provisioning of instances, storage, VPC, and firewalls using Terraform as Infrastructure as Code.</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── EDUCATION ── -->
+<section id="education" style="background:var(--off-white);">
+  <div class="section-inner">
+    <p class="section-label fade-up">Education</p>
+    <h2 class="section-title fade-up">Academic Background</h2>
+    <div class="timeline" style="margin-top:0.5rem;">
+      <div class="timeline-item fade-up" style="padding-bottom:0;">
+        <div class="timeline-dot"></div>
+        <p class="timeline-meta">Aug 2022 – Dec 2023 · San Diego, CA</p>
+        <h3 class="timeline-role">Master of Science — Computer Science</h3>
+        <p class="timeline-company">San Diego State University &nbsp;·&nbsp; GPA: 3.71 / 4.0</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PROJECTS ── -->
+<section id="projects">
+  <div class="section-inner">
+    <p class="section-label fade-up">Featured Work</p>
+    <h2 class="section-title fade-up">Projects &amp; Contributions</h2>
+    <p class="section-subtitle fade-up">Original engineering and AI contributions from production systems to open research.</p>
+
+    <div class="projects-grid">
+      <div class="project-card fade-up">
+        <h3>GenAI Incident Management Platform</h3>
+        <p>AI-powered triage system integrating Splunk, HCL, Halo, and Kubernetes MCP servers to automatically detect, correlate, and resolve production incidents — reducing triage time and human effort by 75%+.</p>
+        <div class="tech-tags">
+          <span class="tech-tag">GenAI</span>
+          <span class="tech-tag">MCP</span>
+          <span class="tech-tag">Splunk</span>
+          <span class="tech-tag">Kubernetes</span>
+          <span class="tech-tag">Python</span>
+        </div>
+        <div class="project-links">
+          <a href="#" class="project-link primary">View Demo</a>
+          <a href="#" class="project-link ghost">GitHub</a>
+        </div>
+      </div>
+
+      <div class="project-card fade-up">
+        <h3>Certificate Automation Platform</h3>
+        <p>End-to-end solution for automated SSL/TLS certificate lifecycle management across the organization, eliminating 100% of P0/P1 certificate incidents and removing manual rotation toil.</p>
+        <div class="tech-tags">
+          <span class="tech-tag">Python</span>
+          <span class="tech-tag">Kubernetes</span>
+          <span class="tech-tag">AWS</span>
+          <span class="tech-tag">Ansible</span>
+        </div>
+        <div class="project-links">
+          <a href="#" class="project-link primary">View Demo</a>
+          <a href="#" class="project-link ghost">GitHub</a>
+        </div>
+      </div>
+
+      <div class="project-card fade-up">
+        <h3>ChatOps Deployment Framework</h3>
+        <p>Designed and implemented a ChatOps-driven deployment pipeline using Slack, Ansible, and AWS pipelines — bringing real-time visibility to releases and cutting rollout time by 30%.</p>
+        <div class="tech-tags">
+          <span class="tech-tag">Slack</span>
+          <span class="tech-tag">Ansible</span>
+          <span class="tech-tag">AWS</span>
+          <span class="tech-tag">Jenkins</span>
+        </div>
+        <div class="project-links">
+          <a href="#" class="project-link primary">View Demo</a>
+          <a href="#" class="project-link ghost">GitHub</a>
+        </div>
+      </div>
+
+      <div class="project-card fade-up">
+        <h3>RCA Agent</h3>
+        <p>An AI agent that performs automated Root Cause Analysis for production incidents, correlating signals from logs, metrics, and traces to surface the most probable failure cause with remediation steps.</p>
+        <div class="tech-tags">
+          <span class="tech-tag">LLM</span>
+          <span class="tech-tag">Python</span>
+          <span class="tech-tag">Splunk</span>
+          <span class="tech-tag">MCP</span>
+        </div>
+        <div class="project-links">
+          <a href="#" class="project-link primary">View Demo</a>
+          <a href="#" class="project-link ghost">GitHub</a>
+        </div>
+      </div>
+
+      <div class="project-card fade-up">
+        <h3>Camouflaged Wildlife Detection</h3>
+        <p>Interpretable instance segmentation model for detecting camouflaged wildlife — published in SpringerNature (ADCIS Vol. 3) and awarded Best Paper at ICTCS.</p>
+        <div class="tech-tags">
+          <span class="tech-tag">Python</span>
+          <span class="tech-tag">TensorFlow</span>
+          <span class="tech-tag">CV</span>
+          <span class="tech-tag">NLP</span>
+        </div>
+        <div class="project-links">
+          <a href="#" class="project-link primary">Read Paper</a>
+          <a href="#" class="project-link ghost">GitHub</a>
+        </div>
+      </div>
+
+      <div class="project-card fade-up">
+        <h3>60 Days of Kubernetes</h3>
+        <p>A widely-read technical blog series on Medium covering Kubernetes architecture, operations, and best practices — from first principles to production-grade deployments.</p>
+        <div class="tech-tags">
+          <span class="tech-tag">Kubernetes</span>
+          <span class="tech-tag">Cloud Native</span>
+          <span class="tech-tag">Technical Writing</span>
+        </div>
+        <div class="project-links">
+          <a href="https://medium.com/@doshi0907" class="project-link primary" target="_blank" rel="noopener">Read Series</a>
+          <a href="https://hackernoon.com/u/prakshal-doshi" class="project-link ghost" target="_blank" rel="noopener">HackerNoon</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PUBLICATIONS ── -->
+<section id="publications">
+  <div class="section-inner">
+    <p class="section-label fade-up">Research &amp; Writing</p>
+    <h2 class="section-title fade-up">Publications &amp; Articles</h2>
+    <p class="section-subtitle fade-up">Peer-reviewed research, technical articles, and educational content spanning AI, ML, SRE, and cloud infrastructure.</p>
+
+    <div class="pub-group fade-up">
+      <p class="pub-group-title">Journal Papers</p>
+
+      <div class="pub-item">
+        <span class="pub-badge">SpringerNature</span>
+        <div class="pub-content">
+          <h4>Interpretable Instance Segmentation for Camouflaged Wildlife Detection</h4>
+          <p>Published in ADCIS Vol. 3 · <strong>Best Paper Award at ICTCS</strong></p>
+        </div>
+      </div>
+
+      <div class="pub-item">
+        <span class="pub-badge">Springer</span>
+        <div class="pub-content">
+          <h4>Recasting Fama-French Factors as Predictive Tools: A Sector-Focused Machine Learning Framework for Stock Returns</h4>
+          <p>ICT: Applications and Social Interfaces</p>
+        </div>
+      </div>
+
+      <div class="pub-item">
+        <span class="pub-badge">Scopus</span>
+        <div class="pub-content">
+          <h4>A Hybrid Semantic—Rule-Based NLP Framework Integrating DFCI and MSKCC Approaches for Clinical Trial Matching Using UMLS and FAISS</h4>
+          <p><a href="https://iieta.org/journals/isi/paper/10.18280/isi.300906" target="_blank" rel="noopener">IIETA — Information Sciences &amp; Intelligence</a></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="pub-group fade-up">
+      <p class="pub-group-title">Technical Blogs</p>
+
+      <div class="pub-item">
+        <span class="pub-badge">HackerNoon</span>
+        <div class="pub-content">
+          <h4>6 Articles · #4 in Top AI &amp; ML Writers</h4>
+          <p>
+            Includes HackerNoon Top Story and Techbeat features.
+            <a href="https://hackernoon.com/u/prakshal-doshi" target="_blank" rel="noopener">Read on HackerNoon →</a>
+          </p>
+        </div>
+      </div>
+
+      <div class="pub-item">
+        <span class="pub-badge">Highlighted</span>
+        <div class="pub-content">
+          <h4>Scaling AI Inference on Kubernetes: The Case for Token-Based Autoscaling</h4>
+          <p><a href="https://hackernoon.com/scaling-ai-inference-on-kubernetes-the-case-for-token-based-autoscaling" target="_blank" rel="noopener">HackerNoon Top Story →</a></p>
+        </div>
+      </div>
+
+      <div class="pub-item">
+        <span class="pub-badge">Highlighted</span>
+        <div class="pub-content">
+          <h4>Guardian Agents: The Emerging Discipline of Agents that Watch Agents</h4>
+          <p><a href="https://hackernoon.com/guardian-agents-the-emerging-discipline-of-agents-that-watch-agents" target="_blank" rel="noopener">HackerNoon Techbeat →</a></p>
+        </div>
+      </div>
+
+      <div class="pub-item">
+        <span class="pub-badge">Medium</span>
+        <div class="pub-content">
+          <h4>60 Days of Kubernetes — Series</h4>
+          <p><a href="https://medium.com/@doshi0907" target="_blank" rel="noopener">Follow on Medium →</a></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="pub-group fade-up">
+      <p class="pub-group-title">Media Features</p>
+
+      <div class="pub-item">
+        <span class="pub-badge">KPBS</span>
+        <div class="pub-content">
+          <h4>Why Did the Flu Hit San Diego County So Hard at the End of 2022?</h4>
+          <p><a href="https://www.kpbs.org/news/local/2023/01/12/why-did-the-flu-hit-san-diego-county-so-hard-at-the-end-of-2022" target="_blank" rel="noopener">Read on KPBS →</a></p>
+        </div>
+      </div>
+
+      <div class="pub-item">
+        <span class="pub-badge">Newspaper</span>
+        <div class="pub-content">
+          <h4>State Scholarship &amp; SSC High Score Recognition</h4>
+          <p>Featured in Indian Newspaper for academic distinction.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── JUDGING ── -->
+<section id="judging">
+  <div class="section-inner">
+    <p class="section-label fade-up">Community Impact</p>
+    <h2 class="section-title fade-up">Judging &amp; Reviewing</h2>
+    <p class="section-subtitle fade-up">Contributing expertise to the research and entrepreneurship communities through peer review, technical evaluation, and hackathon judging worldwide.</p>
+
+    <div class="judging-grid">
+      <div class="judging-block fade-up">
+        <h3>Conference Peer Review</h3>
+        <ul class="judging-list">
+          <li>
+            <span>
+              <strong>IEEE GHTC 2026</strong> — Reviewed 2 research submissions on Educational Technology and Food Security Policy (NLP/ML)
+            </span>
+          </li>
+          <li>
+            <span>
+              <strong>IEEE ETNCC 2026</strong> — Reviewed 2 submissions on Workday Integration Error Handling and AI-Driven Predictive Monitoring
+            </span>
+          </li>
+          <li>
+            <span>
+              <strong>IEEE SmartGridComm 2026</strong> — Technical Program Committee Reviewer for Data Analytics, Machine Learning, and Energy Forecasting tracks
+            </span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="judging-block fade-up">
+        <h3>Hackathon Judging — Global</h3>
+        <ul class="judging-list">
+          <li><a href="https://finbilim25.devpost.com/" target="_blank" rel="noopener">FinBilim FinTech Hackathon 2025</a> <span class="level-tag global">Global</span></li>
+          <li><a href="https://aethra-global-hackathon-2025.devpost.com/" target="_blank" rel="noopener">Aethra AI Hackathon 2025</a> <span class="level-tag global">Global</span></li>
+          <li><a href="https://ai-smart-city-hackathon-2026.devpost.com/" target="_blank" rel="noopener">AI Autonomous Smart City Hackathon 2026</a> <span class="level-tag global">Global</span></li>
+          <li><a href="https://build-with-ai-mlh-ahlen.devpost.com/" target="_blank" rel="noopener">AI 2026 × MLH Agentic AI Hackathon (Ahlen)</a> <span class="level-tag global">Global</span></li>
+          <li><a href="https://global-tech-innovation-2026.devpost.com/" target="_blank" rel="noopener">Global Tech Innovation Hackathon 2026</a> <span class="level-tag global">Global</span></li>
+          <li><a href="https://ibm-unsa-hackathon.devpost.com/" target="_blank" rel="noopener">IBM × UNSA Tech Hackathon 2026</a> <span class="level-tag global">Global</span></li>
+          <li><a href="https://steminate-hacks-2026.devpost.com/" target="_blank" rel="noopener">STEMINATE HACKS 2026</a> <span class="level-tag global">Global</span></li>
+          <li><a href="https://futureai-global-hackthon.devpost.com/" target="_blank" rel="noopener">FutureAI Global Hackathon 2026</a> <span class="level-tag global">Global</span></li>
+          <li><a href="https://vshacks-2026.devpost.com/" target="_blank" rel="noopener">vsHacks 2026</a> <span class="level-tag global">Global</span></li>
+          <li><a href="https://build-with-ai-cs.devpost.com/" target="_blank" rel="noopener">Build with AI: Code Social 2026</a> <span class="level-tag global">Global</span></li>
+          <li><a href="https://grizzly-hacks-iii.devpost.com/" target="_blank" rel="noopener">Grizzly Hacks III</a> <span class="level-tag global">Global</span></li>
+          <li><a href="https://moonshot-aethra.devpost.com/" target="_blank" rel="noopener">Moonshot Hackathon</a> <span class="level-tag global">Global</span></li>
+        </ul>
+      </div>
+
+      <div class="judging-block fade-up">
+        <h3>Hackathon Judging — National &amp; State</h3>
+        <ul class="judging-list">
+          <li><a href="https://www.codeathon.csidmce.com/" target="_blank" rel="noopener">Code-A-Thon 2.0</a> <span class="level-tag national">National</span></li>
+          <li>VES Technothon 2026 <span class="level-tag state">State</span></li>
+        </ul>
+      </div>
+
+      <div class="judging-block fade-up">
+        <h3>Mentorship &amp; Technical Evaluation</h3>
+        <ul class="judging-list">
+          <li>
+            <span>
+              <strong>Mentor — Caltech Longevity Hackathon 2026</strong><br/>
+              <a href="https://caltechlongevity.devpost.com/" target="_blank" rel="noopener">View Hackathon →</a>
+            </span>
+          </li>
+          <li>
+            <span>
+              <strong>Board of Studies — DJSCE AI &amp; DS Department</strong><br/>
+              Invited for 8th (2025) and 9th (2026) Board of Studies for curriculum recommendations
+            </span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SPEAKING ── -->
+<section id="speaking">
+  <div class="section-inner">
+    <p class="section-label fade-up">Knowledge Sharing</p>
+    <h2 class="section-title fade-up">Speaking Engagements</h2>
+    <p class="section-subtitle fade-up">Sharing expertise with students, engineers, and the broader tech community through lectures, workshops, and podcasts.</p>
+
+    <div class="speaking-grid">
+      <div class="speaking-card fade-up">
+        <div class="speaking-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+        </div>
+        <div>
+          <h4>Expert Lecture — DJSCE AI &amp; DS Department</h4>
+          <p>Delivered an expert lecture to the AI &amp; Data Science department at DJSCE on industry applications of SRE and AI.</p>
+        </div>
+      </div>
+
+      <div class="speaking-card fade-up">
+        <div class="speaking-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
+        </div>
+        <div>
+          <h4>Guest Speaker — WeCode Club, GEHU Bhimtal</h4>
+          <p>YouTube Live session as a guest speaker for Graphic Era Hill University's WeCode Club on AI/ML in production engineering.</p>
+        </div>
+      </div>
+
+      <div class="speaking-card fade-up">
+        <div class="speaking-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72m2.54-15.38c-3.72 4.35-8.94 5.66-16.88 5.85m19.5 1.9c-3.5-.93-6.63-.82-8.94 0-2.58.92-5.01 2.86-7.44 6.32"/></svg>
+        </div>
+        <div>
+          <h4>CSI Chapter — Data Science Expert Lecture</h4>
+          <p>Invited speaker at VESP's CSI Chapter to deliver a lecture on Data Science industry practices and career pathways.</p>
+        </div>
+      </div>
+
+      <div class="speaking-card fade-up">
+        <div class="speaking-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg>
+        </div>
+        <div>
+          <h4>Bootcamp — Kubernetes &amp; Cloud Native (CSI Chapter)</h4>
+          <p>Industry Expert and Mentor for a hands-on Kubernetes and Cloud Native bootcamp — guiding engineers from zero to production.</p>
+        </div>
+      </div>
+
+      <div class="speaking-card fade-up">
+        <div class="speaking-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 18v-6a9 9 0 0118 0v6"/><path d="M21 19a2 2 0 01-2 2h-1a2 2 0 01-2-2v-3a2 2 0 012-2h3zM3 19a2 2 0 002 2h1a2 2 0 002-2v-3a2 2 0 00-2-2H3z"/></svg>
+        </div>
+        <div>
+          <h4>Podcast — Connect Tech (VESP Alumni Association)</h4>
+          <p>Featured guest on VESP Alumni Association's "Connect Tech" talk show, discussing SRE career journeys and the future of cloud engineering.</p>
+        </div>
+      </div>
+
+      <div class="speaking-card fade-up">
+        <div class="speaking-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+        </div>
+        <div>
+          <h4>Internal AI Sessions — Apple SRE</h4>
+          <p>Led educational sessions for 30+ SREs on GenAI developments, showcasing AI solutions built for SRE/DevOps workloads and enabling team adoption.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── AWARDS ── -->
+<section id="awards">
+  <div class="section-inner">
+    <p class="section-label fade-up">Recognition</p>
+    <h2 class="section-title fade-up">Awards &amp; Honors</h2>
+
+    <div class="awards-grid">
+      <div class="award-card fade-up">
+        <div class="award-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>
+        </div>
+        <h4>Google Cloud Best Infrastructure</h4>
+        <p>Awarded "Best Infrastructure" by Google Cloud for designing a highly secure, highly available large-scale GCP platform for 38 microservices.</p>
+      </div>
+
+      <div class="award-card fade-up">
+        <div class="award-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <h4>Best Paper — ICTCS</h4>
+        <p>Best Paper Award for "Interpretable Instance Segmentation for Camouflaged Wildlife Detection" — published in SpringerNature.</p>
+      </div>
+
+      <div class="award-card fade-up">
+        <div class="award-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8.21 13.89L7 23l5-3 5 3-1.21-9.12M15 7A3 3 0 119 7a3 3 0 016 0z"/></svg>
+        </div>
+        <h4>1st Place — Technical Paper Presentation</h4>
+        <p>Secured 1st place in Technical Paper Presentation at university level competitions.</p>
+      </div>
+
+      <div class="award-card fade-up">
+        <div class="award-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <h4>Best Student Award</h4>
+        <p>Recognized as Best Student at university for academic and extracurricular excellence.</p>
+      </div>
+
+      <div class="award-card fade-up">
+        <div class="award-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h.01M15 9h.01M9 15h.01M15 15h.01M12 12h.01"/></svg>
+        </div>
+        <h4>State Scholarship</h4>
+        <p>Awarded state-level scholarship for academic performance — featured in Indian newspaper.</p>
+      </div>
+
+      <div class="award-card fade-up">
+        <div class="award-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+        </div>
+        <h4>Star Performer</h4>
+        <p>Recognized as Star Performer for exceptional contributions to team and organizational goals.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── MEMBERSHIPS ── -->
+<section id="memberships">
+  <div class="section-inner">
+    <p class="section-label fade-up">Involvement</p>
+    <h2 class="section-title fade-up">Memberships &amp; Committees</h2>
+
+    <ul class="memberships-list">
+      <li class="fade-up">
+        <span class="mem-dot"></span>
+        <div>
+          <strong>Board of Studies — DJSCE AI &amp; DS Department (8th &amp; 9th, 2025–2026)</strong>
+          Invited member for curriculum recommendations, shaping AI and Data Science education for the next generation.
+        </div>
+      </li>
+      <li class="fade-up">
+        <span class="mem-dot"></span>
+        <div>
+          <strong>Executive Committee — Jain Society of San Diego</strong>
+          Serving as part of the executive committee of a non-profit religious organization in San Diego.
+        </div>
+      </li>
+      <li class="fade-up">
+        <span class="mem-dot"></span>
+        <div>
+          <strong>Head General Secretary — VESP Anvesh Techno-Cultural College Festival</strong>
+          Led organization and execution of the flagship techno-cultural festival at VESP.
+        </div>
+      </li>
+      <li class="fade-up">
+        <span class="mem-dot"></span>
+        <div>
+          <strong>IEEE Technical Program Committee Reviewer</strong>
+          Active reviewer for IEEE SmartGridComm, GHTC, and ETNCC 2026 conferences.
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ── TESTIMONIALS ── -->
+<section id="testimonials">
+  <div class="section-inner">
+    <p class="section-label fade-up">What Others Say</p>
+    <h2 class="section-title fade-up">Testimonials</h2>
+
+    <div class="testimonials-grid">
+      <div class="testimonial-card fade-up">
+        <p class="testimonial-text">
+          Prakshal brings a rare combination of deep infrastructure expertise and forward-thinking AI innovation. His ability to drive adoption of GenAI tools across our SRE workflows while maintaining platform reliability at Apple scale is exceptional.
+        </p>
+        <div class="testimonial-author">
+          <div class="author-avatar">A</div>
+          <div>
+            <p class="author-name">[Name — Add Testimonial]</p>
+            <p class="author-title">Title · Company</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card fade-up">
+        <p class="testimonial-text">
+          One of the most technically sharp engineers I've worked with. Prakshal's work on the certificate automation platform single-handedly eliminated an entire category of P0 incidents for our team — that's the kind of impact he consistently delivers.
+        </p>
+        <div class="testimonial-author">
+          <div class="author-avatar">B</div>
+          <div>
+            <p class="author-name">[Name — Add Testimonial]</p>
+            <p class="author-title">Title · Company</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card fade-up">
+        <p class="testimonial-text">
+          His research work on AI-driven clinical trial matching and camouflaged wildlife detection shows a researcher who doesn't just apply existing tools — he pushes boundaries. A credible voice across both industry and academia.
+        </p>
+        <div class="testimonial-author">
+          <div class="author-avatar">C</div>
+          <div>
+            <p class="author-name">[Name — Add Testimonial]</p>
+            <p class="author-title">Title · Institution</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CONTACT ── -->
+<section id="contact">
+  <div class="contact-inner">
+    <p class="section-label fade-up" style="text-align:center;">Get In Touch</p>
+    <h2 class="section-title fade-up" style="text-align:center;margin-bottom:1rem;">Let's Build Something Together</h2>
+    <p class="section-subtitle fade-up" style="text-align:center;margin:0 auto 2rem;">Whether it's a collaboration, speaking opportunity, or just a good conversation about AI and reliability engineering — I'd love to hear from you.</p>
+
+    <a href="mailto:doshiprakshal5@gmail.com" class="contact-email fade-up">doshiprakshal5@gmail.com</a>
+
+    <div class="social-icons fade-up">
+      <!-- LinkedIn -->
+      <a href="https://linkedin.com/in/prakshal-doshi" class="social-icon" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+      </a>
+      <!-- GitHub -->
+      <a href="https://github.com/prakshal-doshi" class="social-icon" target="_blank" rel="noopener" aria-label="GitHub">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
+      </a>
+      <!-- HackerNoon -->
+      <a href="https://hackernoon.com/u/prakshal-doshi" class="social-icon" target="_blank" rel="noopener" aria-label="HackerNoon">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15H9V8h2v9zm4 0h-2V8h2v9z"/></svg>
+      </a>
+      <!-- Medium -->
+      <a href="https://medium.com/@doshi0907" class="social-icon" target="_blank" rel="noopener" aria-label="Medium">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <p class="footer-name">Prakshal Doshi</p>
+      <p class="footer-copy">&copy; 2026 · All rights reserved.</p>
+    </div>
+    <ul class="footer-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#publications">Publications</a></li>
+      <li><a href="#judging">Judging</a></li>
+      <li><a href="#speaking">Speaking</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</footer>
+
+<script>
+  // Mobile menu toggle
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  hamburger.addEventListener('click', () => {
+    mobileMenu.classList.toggle('open');
+  });
+
+  document.querySelectorAll('.nav-close').forEach(link => {
+    link.addEventListener('click', () => mobileMenu.classList.remove('open'));
+  });
+
+  // Scroll fade-in animation
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+  // Active nav link on scroll
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-links a:not(.btn-hire)');
+
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(section => {
+      if (window.scrollY >= section.offsetTop - 100) {
+        current = section.getAttribute('id');
+      }
+    });
+    navLinks.forEach(link => {
+      link.style.color = '';
+      if (link.getAttribute('href') === '#' + current) {
+        link.style.color = '#ffffff';
+      }
+    });
+  });
+</script>
+</body>
+</html>
